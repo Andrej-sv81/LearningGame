@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dphghvt8s5bmu"]
+
+[ext_resource type="Script" path="res://scenes/enemies/Drone.gd" id="1_3qcx7"]
+[ext_resource type="Texture2D" uid="uid://brciuvk4vhlds" path="res://graphics/enemies/drone.png" id="2_t22qf"]
+
+[node name="Drone" type="CharacterBody2D"]
+script = ExtResource("1_3qcx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_t22qf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(3, -70, 56, -38, 140, -31, 150, 2, 69, 6, 48, 62, 2, 71, -50, 59, -69, 11, -147, 18, -141, -14, -60, -30)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
