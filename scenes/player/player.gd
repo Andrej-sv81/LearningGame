@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 var can_laser: bool = true
-var can_granade: bool = true
+var can_grenade: bool = true
 const SPEED := 500
 signal laser(position, direction)
-signal granade(position, direction)
+signal grenade(position, direction)
 
 
 func _process(_delta):
@@ -21,16 +21,16 @@ func _process(_delta):
 		var laser_direction = (get_global_mouse_position() - position).normalized()
 		laser.emit(selected_laser.global_position, laser_direction)
 		
-	if Input.is_action_just_pressed("secondary_action") and can_granade:
-		can_granade = false
-		$GranadeTimer.start()
+	if Input.is_action_just_pressed("secondary_action") and can_grenade:
+		can_grenade = false
+		$GrenadeTimer.start()
 		var pos = $LaserStartPositions.get_children()[0].global_position
-		var granade_direction = (get_global_mouse_position() - position).normalized()
-		granade.emit(pos, granade_direction)
+		var grenade_direction = (get_global_mouse_position() - position).normalized()
+		grenade.emit(pos, grenade_direction)
 
 func _on_laser_timer_timeout():
 	can_laser = true
 
 
-func _on_granade_timer_timeout():
-	can_granade  = true
+func _on_grenade_timer_timeout():
+	can_grenade = true

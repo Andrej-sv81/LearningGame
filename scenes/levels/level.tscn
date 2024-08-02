@@ -20,6 +20,6 @@ position = Vector2(554, 343)
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[connection signal="granade" from="Player" to="." method="_on_player_granade"]
+[connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="on_player_entered" from="Gate" to="." method="_on_gate_on_player_entered"]

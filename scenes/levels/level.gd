@@ -1,7 +1,7 @@
 extends Node2D
 
 var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
-var granade_scene: PackedScene = preload("res://scenes/projectiles/granade.tscn")
+var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
 
 func _ready():
 	pass
@@ -17,9 +17,9 @@ func _on_player_laser(pos, direction):
 	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
 	$Projectiles.add_child(laser)
 
-func _on_player_granade(pos, direction):
-	var granade = granade_scene.instantiate() as RigidBody2D
-	granade.position = pos
-	granade.linear_velocity = direction * granade.speed
-	$Projectiles.add_child(granade)
+func _on_player_grenade(pos, direction):
+	var grenade = grenade_scene.instantiate() as RigidBody2D
+	grenade.position = pos
+	grenade.linear_velocity = direction * grenade.speed
+	$Projectiles.add_child(grenade)
 	

@@ -21,7 +21,7 @@ shape = SubResource("CircleShape2D_jlpl8")
 wait_time = 0.5
 one_shot = true
 
-[node name="GranadeTimer" type="Timer" parent="."]
+[node name="GrenadeTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
@@ -38,4 +38,4 @@ position = Vector2(122, 11)
 position = Vector2(122, 27)
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
-[connection signal="timeout" from="GranadeTimer" to="." method="_on_granade_timer_timeout"]
+[connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
