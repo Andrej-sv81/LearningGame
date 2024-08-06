@@ -1,15 +1,118 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5pew5fu2wcha"]
+[gd_scene load_steps=19 format=3 uid="uid://b5pew5fu2wcha"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_sc3w2"]
 [ext_resource type="PackedScene" uid="uid://yxlxc6l7o32m" path="res://scenes/player/player.tscn" id="2_4v1bl"]
+[ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="2_680jo"]
+[ext_resource type="Texture2D" uid="uid://dnyrrait4anek" path="res://graphics/decals/dirt_patch.png" id="3_e5vl1"]
 [ext_resource type="PackedScene" uid="uid://bn7u0ckqfej7e" path="res://scenes/objects/gate.tscn" id="3_ttcjs"]
+[ext_resource type="Texture2D" uid="uid://mmftua15aogv" path="res://graphics/decals/moss/moss_1.png" id="4_djcyg"]
+[ext_resource type="Texture2D" uid="uid://crgfjhfctsbuk" path="res://graphics/decals/moss/moss_2.png" id="5_pq81u"]
+[ext_resource type="Texture2D" uid="uid://cgr55ajqmqfwq" path="res://graphics/decals/moss/moss_3.png" id="6_ktouq"]
+[ext_resource type="Texture2D" uid="uid://ry4u7nuh0v4p" path="res://graphics/decals/moss/moss_4.png" id="7_xocdv"]
+[ext_resource type="Texture2D" uid="uid://eppmk1uq2bk6" path="res://graphics/decals/moss/moss_5.png" id="8_mfur6"]
+[ext_resource type="Texture2D" uid="uid://ftsn1wi8u14a" path="res://graphics/decals/blood.png" id="9_gpusx"]
+[ext_resource type="Texture2D" uid="uid://bavwgex7eqprr" path="res://graphics/tilesets/outside_walls.png" id="10_kvdv8"]
+[ext_resource type="Texture2D" uid="uid://de52ut06u6gri" path="res://graphics/tilesets/soil.png" id="11_dqtr2"]
+[ext_resource type="PackedScene" uid="uid://d2qio3c5ubv1w" path="res://scenes/houses/house.tscn" id="12_0wqje"]
+[ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="13_smu0p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onyxx"]
+resource_name = "walls"
+texture = ExtResource("10_kvdv8")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7f8a"]
+resource_name = "soil"
+texture = ExtResource("11_dqtr2")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ms5of"]
+tile_size = Vector2i(390, 390)
+sources/0 = SubResource("TileSetAtlasSource_onyxx")
+sources/1 = SubResource("TileSetAtlasSource_f7f8a")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_sc3w2")
 
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Soil" type="Sprite2D" parent="Ground"]
+texture_repeat = 2
+position = Vector2(638, 809)
+texture = ExtResource("2_680jo")
+region_enabled = true
+region_rect = Rect2(-301.085, 29.38, 16000, 10000)
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+tile_set = SubResource("TileSet_ms5of")
+format = 2
+layer_0/name = "soil"
+layer_0/tile_data = PackedInt32Array(-3, 65537, 2, -4, 65537, 2, -5, 65537, 1, 65531, 131073, 1, 131067, 131073, 1, 196603, 131073, 1, 262139, 131073, 1, 327675, 131073, 1, 393211, 65537, 1, -65539, 65537, 1, -65540, 65537, 1, -65541, 65537, 1, -65542, 65537, 1, -6, 65537, 1, 65530, 65537, 1, 131066, 65537, 1, 196602, 65537, 1, 262138, 65537, 1, 327674, 65537, 1, 393210, 65537, 1, 458746, 65537, 1, 458747, 65537, 1, 458748, 65537, 1, 458749, 65537, 1, 458750, 65537, 1, 458751, 65537, 1, 393216, 65537, 1, 393217, 65537, 1, 393218, 65537, 1, 393219, 65537, 1, 393220, 65537, 1, 393221, 65537, 1, 393222, 65537, 1, 393223, 65537, 1, 393224, 65537, 1, 393225, 65537, 1, 327689, 65537, 1, 262153, 65537, 1, 196617, 65537, 1, 131081, 65537, 1, 65545, 65537, 1, 9, 65537, 1, -65527, 65537, 1, -131063, 65537, 1, -131064, 65537, 1, -131065, 65537, 1, -131066, 65537, 1, -131067, 65537, 1, -196603, 65537, 1, -196602, 65537, 1, -196601, 65537, 1, -196600, 65537, 1, -196599, 65537, 1, -131078, 65537, 1, -131077, 65537, 1, -131076, 65537, 1, -131075, 65537, 1, -131074, 65537, 1, -65528, 65537, 1, 8, 65537, 1, 65544, 65537, 1, 131080, 65537, 1, 196616, 65537, 1, 262152, 65537, 1, 327688, 65537, 1, 393212, 65537, 0, 393213, 65537, 0, 393214, 65537, 0, 393215, 65537, 0, 327680, 65537, 0, 327681, 65537, 0, 327682, 65537, 0, 327683, 65537, 0, 327684, 65537, 0, 327685, 65537, 0, 327686, 65537, 0, 327687, 65537, 1, 262151, 1, 1, 196615, 1, 1, 131079, 1, 1, 65543, 1, 1, 7, 1, 1, -65529, 65537, 1, -65531, 65537, 2, -65530, 65537, 2, -393209, 65537, 1, -327673, 65537, 1, -262137, 65537, 1, -393208, 65537, 1, -327672, 65537, 1, -262136, 65537, 1, -393207, 65537, 1, -327671, 65537, 1, -262135, 65537, 1, -393206, 65537, 1, -327670, 65537, 1, -262134, 65537, 1, -196598, 65537, 1, -131062, 65537, 1, -65526, 65537, 1, -393205, 65537, 1, -327669, 65537, 1, -262133, 65537, 1, -196597, 65537, 1, -131061, 65537, 1, -65525, 65537, 1, -393204, 65537, 1, -327668, 65537, 1, -262132, 65537, 1, -196596, 65537, 1, -131060, 65537, 1, -65524, 65537, 1, -393203, 65537, 1, -327667, 65537, 1, -262131, 65537, 1, -196595, 65537, 1, -131059, 65537, 1, -65523, 65537, 1, -393202, 65537, 1, -327666, 65537, 1, -262130, 65537, 1, -196594, 65537, 1, -131058, 65537, 1, -65522, 65537, 1, -393201, 65537, 1, -327665, 65537, 1, -262129, 65537, 1, -196593, 65537, 1, -131057, 65537, 1, -65521, 65537, 1)
+layer_1/name = "walls"
+layer_1/tile_data = PackedInt32Array(-3, 65536, 0, -4, 65536, 0, -5, 65536, 1, 65531, 0, 2, 131067, 0, 2, 196603, 0, 2, 262139, 0, 2, 327675, 0, 2, 7, 0, 2, 65543, 0, 2, 131079, 0, 2, 196615, 0, 2, 262151, 0, 2, 327687, 131072, 2, 327686, 65536, 0, 327685, 65536, 0, 327684, 65536, 0, 327683, 65536, 0, 327682, 65536, 0, 327681, 65536, 0, 327680, 65536, 0, 393215, 65536, 0, 393214, 65536, 0, 393213, 65536, 0, 393212, 65536, 0, 393211, 65536, 2, -65531, 65536, 0, -65530, 65536, 0, -65529, 131072, 1)
+
+[node name="Decoration" type="Sprite2D" parent="Ground"]
+modulate = Color(0.988235, 0.941176, 0.694118, 0.623529)
+position = Vector2(-210, 1143)
+texture = ExtResource("3_e5vl1")
+
+[node name="Moss1" type="Sprite2D" parent="Ground"]
+position = Vector2(-1552, 1944)
+texture = ExtResource("4_djcyg")
+
+[node name="Moss2" type="Sprite2D" parent="Ground"]
+position = Vector2(-1576, -11)
+texture = ExtResource("5_pq81u")
+
+[node name="Moss3" type="Sprite2D" parent="Ground"]
+position = Vector2(2759, -9)
+texture = ExtResource("6_ktouq")
+
+[node name="Moss5" type="Sprite2D" parent="Ground"]
+position = Vector2(1314, 454)
+texture = ExtResource("8_mfur6")
+
+[node name="Blood" type="Sprite2D" parent="Ground"]
+modulate = Color(1, 1, 1, 0.796078)
+position = Vector2(844, 1171)
+texture = ExtResource("9_gpusx")
+
+[node name="Moss4" type="Sprite2D" parent="Ground"]
+position = Vector2(2708, 2001)
+texture = ExtResource("7_xocdv")
+
+[node name="House" parent="Ground" instance=ExtResource("12_0wqje")]
+position = Vector2(4243, 1149)
+rotation = 1.57079
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("13_smu0p")]
+position = Vector2(544, 1563)
+
+[node name="SteamVent2" parent="Ground" instance=ExtResource("13_smu0p")]
+position = Vector2(2454, 91)
+
 [node name="Player" parent="." instance=ExtResource("2_4v1bl")]
 z_index = 5
-position = Vector2(625, 528)
+position = Vector2(-191, 1103)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.6, 0.6)

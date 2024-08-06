@@ -1,12 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://yxlxc6l7o32m"]
+[gd_scene load_steps=10 format=3 uid="uid://yxlxc6l7o32m"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_fdndw"]
 [ext_resource type="Texture2D" uid="uid://dk8xsbshmv6wv" path="res://graphics/player/player.png" id="1_owpkt"]
+[ext_resource type="Texture2D" uid="uid://bx8m6lf76kb3u" path="res://graphics/decals/white.png" id="3_hhxwd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlpl8"]
 radius = 67.0075
 
+[sub_resource type="Gradient" id="Gradient_8u7d5"]
+colors = PackedColorArray(1, 1, 1, 1, 0.459407, 0.742954, 1, 0.458824)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tbesa"]
+gradient = SubResource("Gradient_8u7d5")
+
+[sub_resource type="Curve" id="Curve_ddxc8"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0866667, 95.6044), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l8rdw"]
+curve = SubResource("Curve_ddxc8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvgp4"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 11.07
+spread = 38.933
+initial_velocity_min = 272.11
+initial_velocity_max = 272.11
+angular_velocity_max = 98.88
+gravity = Vector3(0, 0, 0)
+damping_min = 1.0
+damping_max = 8.865
+damping_curve = SubResource("CurveTexture_l8rdw")
+scale_min = 0.3
+color = Color(0.118268, 0.998785, 0.999999, 1)
+color_ramp = SubResource("GradientTexture1D_tbesa")
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 31
 script = ExtResource("1_fdndw")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
@@ -36,6 +68,16 @@ position = Vector2(122, 11)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
 position = Vector2(122, 27)
+
+[node name="LaserParticles" type="GPUParticles2D" parent="."]
+position = Vector2(133, 19)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_uvgp4")
+texture = ExtResource("3_hhxwd")
+lifetime = 0.4
+one_shot = true
+speed_scale = 2.0
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]

@@ -11,11 +11,13 @@ bounce = 0.4
 radius = 31.0644
 
 [node name="Granade" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 15
 physics_material_override = SubResource("PhysicsMaterial_8se0q")
 gravity_scale = 0.0
 linear_damp = 1.6
 script = ExtResource("1_syxcu")
-speed = 550
+speed = 1200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
