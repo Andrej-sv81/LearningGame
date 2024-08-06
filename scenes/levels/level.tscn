@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5pew5fu2wcha"]
+[gd_scene load_steps=29 format=3 uid="uid://b5pew5fu2wcha"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_sc3w2"]
 [ext_resource type="PackedScene" uid="uid://yxlxc6l7o32m" path="res://scenes/player/player.tscn" id="2_4v1bl"]
@@ -16,20 +16,60 @@
 [ext_resource type="PackedScene" uid="uid://d2qio3c5ubv1w" path="res://scenes/houses/house.tscn" id="12_0wqje"]
 [ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="13_smu0p"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3jyf"]
+polygon = PackedVector2Array(195, -58, -66, -64, -66, 64, 195, 60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xx2oe"]
+polygon = PackedVector2Array(58, 195, 64, -66, -64, -66, -60, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_65ymo"]
+polygon = PackedVector2Array(-58, 195, -54, -195, 58, -195, 60, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cq6xp"]
+polygon = PackedVector2Array(58, -195, 56, 42, -60, 44, -60, -195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ai4dt"]
+polygon = PackedVector2Array(-195, -58, 195, -54, 195, 58, -195, 60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uwurr"]
+polygon = PackedVector2Array(195, 52, 60, 58, 64, 195, -58, 195, -62, -66, 195, -60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5vo57"]
+polygon = PackedVector2Array(52, -195, 58, -60, 195, -64, 195, 58, -66, 62, -60, -195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2fj36"]
+polygon = PackedVector2Array(-195, -58, 66, -64, 66, 64, -195, 60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0s5ct"]
+polygon = PackedVector2Array(-52, 195, -58, 60, -195, 64, -195, -58, 66, -62, 60, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pk7py"]
+polygon = PackedVector2Array(-195, -52, -60, -58, -64, -195, 58, -195, 62, 66, -195, 60)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onyxx"]
 resource_name = "walls"
 texture = ExtResource("10_kvdv8")
 texture_region_size = Vector2i(390, 390)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_i3jyf")
 1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ai4dt")
 2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2fj36")
 0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_xx2oe")
 1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_uwurr")
 2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_0s5ct")
 0:2/0 = 0
+0:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_65ymo")
 1:2/0 = 0
+1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_5vo57")
 2:2/0 = 0
+2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_pk7py")
 0:3/0 = 0
+0:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cq6xp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7f8a"]
 resource_name = "soil"
@@ -47,6 +87,7 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_ms5of"]
 tile_size = Vector2i(390, 390)
+occlusion_layer_0/light_mask = 1
 sources/0 = SubResource("TileSetAtlasSource_onyxx")
 sources/1 = SubResource("TileSetAtlasSource_f7f8a")
 
@@ -110,6 +151,9 @@ position = Vector2(544, 1563)
 [node name="SteamVent2" parent="Ground" instance=ExtResource("13_smu0p")]
 position = Vector2(2454, 91)
 
+[node name="Gate" parent="." instance=ExtResource("3_ttcjs")]
+position = Vector2(554, 343)
+
 [node name="Player" parent="." instance=ExtResource("2_4v1bl")]
 z_index = 5
 position = Vector2(-191, 1103)
@@ -118,11 +162,8 @@ position = Vector2(-191, 1103)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
-[node name="Gate" parent="." instance=ExtResource("3_ttcjs")]
-position = Vector2(554, 343)
-
 [node name="Projectiles" type="Node2D" parent="."]
 
+[connection signal="on_player_entered" from="Gate" to="." method="_on_gate_on_player_entered"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
-[connection signal="on_player_entered" from="Gate" to="." method="_on_gate_on_player_entered"]
