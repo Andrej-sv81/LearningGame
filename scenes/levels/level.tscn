@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b5pew5fu2wcha"]
+[gd_scene load_steps=30 format=3 uid="uid://b5pew5fu2wcha"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_sc3w2"]
 [ext_resource type="PackedScene" uid="uid://yxlxc6l7o32m" path="res://scenes/player/player.tscn" id="2_4v1bl"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://de52ut06u6gri" path="res://graphics/tilesets/soil.png" id="11_dqtr2"]
 [ext_resource type="PackedScene" uid="uid://d2qio3c5ubv1w" path="res://scenes/houses/house.tscn" id="12_0wqje"]
 [ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="13_smu0p"]
+[ext_resource type="PackedScene" uid="uid://bfknevto5xg20" path="res://scenes/objects/light_fan_animation.tscn" id="14_60np4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3jyf"]
 polygon = PackedVector2Array(195, -58, -66, -64, -66, 64, 195, 60)
@@ -150,6 +151,38 @@ position = Vector2(544, 1563)
 
 [node name="SteamVent2" parent="Ground" instance=ExtResource("13_smu0p")]
 position = Vector2(2454, 91)
+
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("14_60np4")]
+position = Vector2(3662, 1732)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame = 4
+frame_progress = 0.176665
+
+[node name="LightFanAnimation3" parent="Ground" instance=ExtResource("14_60np4")]
+position = Vector2(3660, 555)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame_progress = 0.0652847
+
+[node name="LightFanAnimation4" parent="Ground" instance=ExtResource("14_60np4")]
+position = Vector2(4827, 559)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame_progress = 0.0652847
+
+[node name="LightFanAnimation5" parent="Ground" instance=ExtResource("14_60np4")]
+position = Vector2(4835, 1344)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame_progress = 0.0652847
+
+[node name="LightFanAnimation2" parent="Ground" instance=ExtResource("14_60np4")]
+position = Vector2(3658, 2512)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame = 37
+frame_progress = 0.527334
 
 [node name="Gate" parent="." instance=ExtResource("3_ttcjs")]
 position = Vector2(554, 343)
