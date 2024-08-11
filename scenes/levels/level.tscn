@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b5pew5fu2wcha"]
+[gd_scene load_steps=31 format=3 uid="uid://b5pew5fu2wcha"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_sc3w2"]
 [ext_resource type="PackedScene" uid="uid://yxlxc6l7o32m" path="res://scenes/player/player.tscn" id="2_4v1bl"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d2qio3c5ubv1w" path="res://scenes/houses/house.tscn" id="12_0wqje"]
 [ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="13_smu0p"]
 [ext_resource type="PackedScene" uid="uid://bfknevto5xg20" path="res://scenes/objects/light_fan_animation.tscn" id="14_60np4"]
+[ext_resource type="PackedScene" uid="uid://dphghvt8s5bmu" path="res://scenes/enemies/drone.tscn" id="17_iqvhn"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3jyf"]
 polygon = PackedVector2Array(195, -58, -66, -64, -66, 64, 195, 60)
@@ -95,16 +96,16 @@ sources/1 = SubResource("TileSetAtlasSource_f7f8a")
 [node name="Level" type="Node2D"]
 script = ExtResource("1_sc3w2")
 
-[node name="Ground" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Soil" type="Sprite2D" parent="Ground"]
+[node name="Soil" type="Sprite2D" parent="Node2D"]
 texture_repeat = 2
 position = Vector2(638, 809)
 texture = ExtResource("2_680jo")
 region_enabled = true
 region_rect = Rect2(-301.085, 29.38, 16000, 10000)
 
-[node name="TileMap" type="TileMap" parent="Ground"]
+[node name="TileMap" type="TileMap" parent="Node2D"]
 tile_set = SubResource("TileSet_ms5of")
 format = 2
 layer_0/name = "soil"
@@ -112,73 +113,73 @@ layer_0/tile_data = PackedInt32Array(-3, 65537, 2, -4, 65537, 2, -5, 65537, 1, 6
 layer_1/name = "walls"
 layer_1/tile_data = PackedInt32Array(-3, 65536, 0, -4, 65536, 0, -5, 65536, 1, 65531, 0, 2, 131067, 0, 2, 196603, 0, 2, 262139, 0, 2, 327675, 0, 2, 7, 0, 2, 65543, 0, 2, 131079, 0, 2, 196615, 0, 2, 262151, 0, 2, 327687, 131072, 2, 327686, 65536, 0, 327685, 65536, 0, 327684, 65536, 0, 327683, 65536, 0, 327682, 65536, 0, 327681, 65536, 0, 327680, 65536, 0, 393215, 65536, 0, 393214, 65536, 0, 393213, 65536, 0, 393212, 65536, 0, 393211, 65536, 2, -65531, 65536, 0, -65530, 65536, 0, -65529, 131072, 1)
 
-[node name="Decoration" type="Sprite2D" parent="Ground"]
+[node name="Decoration" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.988235, 0.941176, 0.694118, 0.623529)
 position = Vector2(-210, 1143)
 texture = ExtResource("3_e5vl1")
 
-[node name="Moss1" type="Sprite2D" parent="Ground"]
+[node name="Moss1" type="Sprite2D" parent="Node2D"]
 position = Vector2(-1552, 1944)
 texture = ExtResource("4_djcyg")
 
-[node name="Moss2" type="Sprite2D" parent="Ground"]
+[node name="Moss2" type="Sprite2D" parent="Node2D"]
 position = Vector2(-1576, -11)
 texture = ExtResource("5_pq81u")
 
-[node name="Moss3" type="Sprite2D" parent="Ground"]
+[node name="Moss3" type="Sprite2D" parent="Node2D"]
 position = Vector2(2759, -9)
 texture = ExtResource("6_ktouq")
 
-[node name="Moss5" type="Sprite2D" parent="Ground"]
+[node name="Moss5" type="Sprite2D" parent="Node2D"]
 position = Vector2(1314, 454)
 texture = ExtResource("8_mfur6")
 
-[node name="Blood" type="Sprite2D" parent="Ground"]
+[node name="Blood" type="Sprite2D" parent="Node2D"]
 modulate = Color(1, 1, 1, 0.796078)
 self_modulate = Color(0.835294, 1, 1, 1)
 position = Vector2(844, 1171)
 texture = ExtResource("9_gpusx")
 
-[node name="Moss4" type="Sprite2D" parent="Ground"]
+[node name="Moss4" type="Sprite2D" parent="Node2D"]
 position = Vector2(2708, 2001)
 texture = ExtResource("7_xocdv")
 
-[node name="House" parent="Ground" instance=ExtResource("12_0wqje")]
+[node name="House" parent="Node2D" instance=ExtResource("12_0wqje")]
 position = Vector2(4243, 1149)
 rotation = 1.57079
 
-[node name="SteamVent" parent="Ground" instance=ExtResource("13_smu0p")]
+[node name="SteamVent" parent="Node2D" instance=ExtResource("13_smu0p")]
 position = Vector2(544, 1563)
 
-[node name="SteamVent2" parent="Ground" instance=ExtResource("13_smu0p")]
+[node name="SteamVent2" parent="Node2D" instance=ExtResource("13_smu0p")]
 position = Vector2(2454, 91)
 
-[node name="LightFanAnimation" parent="Ground" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation" parent="Node2D" instance=ExtResource("14_60np4")]
 position = Vector2(3662, 1732)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame = 4
 frame_progress = 0.176665
 
-[node name="LightFanAnimation3" parent="Ground" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation3" parent="Node2D" instance=ExtResource("14_60np4")]
 position = Vector2(3660, 555)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame_progress = 0.0652847
 
-[node name="LightFanAnimation4" parent="Ground" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation4" parent="Node2D" instance=ExtResource("14_60np4")]
 position = Vector2(4827, 559)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame_progress = 0.0652847
 
-[node name="LightFanAnimation5" parent="Ground" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation5" parent="Node2D" instance=ExtResource("14_60np4")]
 position = Vector2(4835, 1344)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame_progress = 0.0652847
 
-[node name="LightFanAnimation2" parent="Ground" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation2" parent="Node2D" instance=ExtResource("14_60np4")]
 position = Vector2(3658, 2512)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
@@ -190,7 +191,7 @@ position = Vector2(554, 343)
 
 [node name="Player" parent="." instance=ExtResource("2_4v1bl")]
 z_index = 5
-position = Vector2(-191, 1103)
+position = Vector2(647, 878)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.6, 0.6)
@@ -198,6 +199,11 @@ position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[node name="Drone" parent="." instance=ExtResource("17_iqvhn")]
+position = Vector2(1895, 1742)
+
+[connection signal="player_entered" from="Node2D/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Node2D/House" to="." method="_on_house_player_exited"]
 [connection signal="on_player_entered" from="Gate" to="." method="_on_gate_on_player_entered"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

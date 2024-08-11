@@ -20,3 +20,6 @@ func _on_timer_timeout():
 	else:
 		direction = Vector2.RIGHT
 		$Sprite2D.flip_v = false
+
+func hit():
+	print("damage!")
