@@ -135,6 +135,7 @@ texture = ExtResource("8_mfur6")
 
 [node name="Blood" type="Sprite2D" parent="Ground"]
 modulate = Color(1, 1, 1, 0.796078)
+self_modulate = Color(0.835294, 1, 1, 1)
 position = Vector2(844, 1171)
 texture = ExtResource("9_gpusx")
 
