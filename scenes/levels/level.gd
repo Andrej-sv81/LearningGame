@@ -28,7 +28,7 @@ func _on_player_grenade(pos, direction):
 
 func _on_house_player_entered():
 	var tween = create_tween()
-	tween.tween_property($Player/Camera2D, "zoom", Vector2(1,1), 1).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.8,0.8), 1).set_trans(Tween.TRANS_ELASTIC)
 	
 
 func _on_house_player_exited():

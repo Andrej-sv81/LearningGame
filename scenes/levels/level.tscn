@@ -197,10 +197,10 @@ position = Vector2(647, 878)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
-[node name="Projectiles" type="Node2D" parent="."]
-
 [node name="Drone" parent="." instance=ExtResource("17_iqvhn")]
 position = Vector2(1895, 1742)
+
+[node name="Projectiles" type="Node2D" parent="."]
 
 [connection signal="player_entered" from="Node2D/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Node2D/House" to="." method="_on_house_player_exited"]
