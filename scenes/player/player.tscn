@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://yxlxc6l7o32m"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_fdndw"]
+[ext_resource type="Script" uid="uid://b5k7442igsr2y" path="res://scenes/player/player.gd" id="1_fdndw"]
 [ext_resource type="Texture2D" uid="uid://dk8xsbshmv6wv" path="res://graphics/player/player.png" id="1_owpkt"]
 [ext_resource type="Texture2D" uid="uid://bx8m6lf76kb3u" path="res://graphics/decals/white.png" id="3_hhxwd"]
 
@@ -17,7 +17,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0.459407, 0.742954, 1, 0.458824)
 gradient = SubResource("Gradient_8u7d5")
 
 [sub_resource type="Curve" id="Curve_ddxc8"]
-max_value = 100.0
+_limits = [0.0, 100.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0866667, 95.6044), 0.0, 0.0, 0, 0]
 point_count = 2
 

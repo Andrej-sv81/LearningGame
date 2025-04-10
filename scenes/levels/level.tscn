@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=4 uid="uid://b5pew5fu2wcha"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_sc3w2"]
+[ext_resource type="Script" uid="uid://dug7oa6v5vhwo" path="res://scenes/levels/level.gd" id="1_sc3w2"]
 [ext_resource type="PackedScene" uid="uid://yxlxc6l7o32m" path="res://scenes/player/player.tscn" id="2_4v1bl"]
 [ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="2_680jo"]
 [ext_resource type="Texture2D" uid="uid://dnyrrait4anek" path="res://graphics/decals/dirt_patch.png" id="3_e5vl1"]
@@ -53,25 +53,25 @@ resource_name = "walls"
 texture = ExtResource("10_kvdv8")
 texture_region_size = Vector2i(390, 390)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_i3jyf")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_i3jyf")
 1:0/0 = 0
-1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ai4dt")
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ai4dt")
 2:0/0 = 0
-2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2fj36")
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2fj36")
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_xx2oe")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xx2oe")
 1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_uwurr")
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_uwurr")
 2:1/0 = 0
-2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_0s5ct")
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0s5ct")
 0:2/0 = 0
-0:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_65ymo")
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_65ymo")
 1:2/0 = 0
-1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_5vo57")
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5vo57")
 2:2/0 = 0
-2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_pk7py")
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_pk7py")
 0:3/0 = 0
-0:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cq6xp")
+0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_cq6xp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7f8a"]
 resource_name = "soil"

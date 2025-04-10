@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bn7u0ckqfej7e"]
 
 [ext_resource type="Texture2D" uid="uid://c1lbefstxunb1" path="res://graphics/objects/gate.png" id="1_f1s2f"]
-[ext_resource type="Script" path="res://scenes/objects/gate.gd" id="1_g2asp"]
+[ext_resource type="Script" uid="uid://db7orow807eef" path="res://scenes/objects/gate.gd" id="1_g2asp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp04c"]
 size = Vector2(830, 237)
