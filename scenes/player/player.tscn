@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://yxlxc6l7o32m"]
+[gd_scene load_steps=12 format=3 uid="uid://yxlxc6l7o32m"]
 
 [ext_resource type="Script" uid="uid://b5k7442igsr2y" path="res://scenes/player/player.gd" id="1_fdndw"]
 [ext_resource type="Texture2D" uid="uid://dk8xsbshmv6wv" path="res://graphics/player/player.png" id="1_owpkt"]
 [ext_resource type="Texture2D" uid="uid://bx8m6lf76kb3u" path="res://graphics/decals/white.png" id="3_hhxwd"]
+[ext_resource type="Texture2D" uid="uid://dex73yydawdn3" path="res://graphics/lights/textures/circle.png" id="4_lvxji"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rn6jj"]
 polygon = PackedVector2Array(2, -60, 11, -59, 23, -61, 30, -57, 34, -50, 41, -43, 45, -34, 52, -27, 64, -23, 70, -15, 78, -9, 90, -10, 97, -5, 108, -2, 114, 2, 123, 4, 129, 7, 133, 13, 134, 27, 131, 32, 121, 35, 109, 33, 100, 40, 96, 50, 78, 51, 59, 51, 59, 41, 48, 39, 27, 44, 12, 52, -3, 58, -25, 56, -36, 45, -51, 26, -54, 10, -59, -2, -59, -23, -52, -35, -42, -47, -30, -48, -20, -58, -2, -59)
@@ -29,8 +30,8 @@ particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 11.07
 spread = 38.933
-initial_velocity_min = 272.11
-initial_velocity_max = 272.11
+initial_velocity_min = 610.57
+initial_velocity_max = 856.73
 angular_velocity_max = 98.88
 gravity = Vector3(0, 0, 0)
 damping_min = 1.0
@@ -39,6 +40,7 @@ damping_curve = SubResource("CurveTexture_l8rdw")
 scale_min = 0.3
 color = Color(0.118268, 0.998785, 0.999999, 1)
 color_ramp = SubResource("GradientTexture1D_tbesa")
+turbulence_enabled = true
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -78,12 +80,77 @@ position = Vector2(122, 27)
 [node name="LaserParticles" type="GPUParticles2D" parent="."]
 position = Vector2(133, 19)
 emitting = false
-amount = 20
-process_material = SubResource("ParticleProcessMaterial_uvgp4")
+amount = 30
 texture = ExtResource("3_hhxwd")
-lifetime = 0.4
+lifetime = 0.21
 one_shot = true
 speed_scale = 2.0
+process_material = SubResource("ParticleProcessMaterial_uvgp4")
+
+[node name="GunLights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="GunLights"]
+position = Vector2(48, 25)
+color = Color(1, 1, 0, 1)
+energy = 9.38
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
+
+[node name="PointLight2D2" type="PointLight2D" parent="GunLights"]
+position = Vector2(68, 32)
+scale = Vector2(1, 0.625)
+color = Color(1, 1, 0, 1)
+energy = 9.23
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
+
+[node name="PointLight2D3" type="PointLight2D" parent="GunLights"]
+position = Vector2(58, 32)
+scale = Vector2(1, 0.625)
+color = Color(1, 1, 0, 1)
+energy = 10.3
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
+
+[node name="PointLight2D4" type="PointLight2D" parent="GunLights"]
+position = Vector2(-7, 44)
+scale = Vector2(1, 0.875)
+color = Color(1, 1, 0, 1)
+energy = 10.3
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
+
+[node name="PointLight2D5" type="PointLight2D" parent="GunLights"]
+position = Vector2(-21.5, 41)
+scale = Vector2(0.875, 1)
+color = Color(1, 1, 0, 1)
+energy = 10.3
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
+
+[node name="PointLight2D6" type="PointLight2D" parent="GunLights"]
+position = Vector2(26.5, -28.25)
+scale = Vector2(0.875, 0.5625)
+color = Color(1, 1, 0, 1)
+energy = 10.3
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
+
+[node name="PointLight2D7" type="PointLight2D" parent="GunLights"]
+position = Vector2(21, -39)
+scale = Vector2(1, 0.625)
+color = Color(1, 1, 0, 1)
+energy = 10.3
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
+
+[node name="PointLight2D8" type="PointLight2D" parent="GunLights"]
+position = Vector2(14.5, -49)
+scale = Vector2(1.125, 0.75)
+color = Color(1, 1, 0, 1)
+energy = 10.3
+texture = ExtResource("4_lvxji")
+texture_scale = 0.01
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]

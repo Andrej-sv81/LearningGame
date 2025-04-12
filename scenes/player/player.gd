@@ -23,6 +23,8 @@ func _process(_delta):
 		var laser_direction = (get_global_mouse_position() - position).normalized()
 		laser.emit(selected_laser.global_position, laser_direction)
 		$LaserParticles.emitting = true
+		for light: PointLight2D in $GunLights.get_children():
+			light.visible = false;
 		
 	if Input.is_action_just_pressed("secondary_action") and can_grenade:
 		can_grenade = false
@@ -33,6 +35,8 @@ func _process(_delta):
 
 func _on_laser_timer_timeout():
 	can_laser = true
+	for light: PointLight2D in $GunLights.get_children():
+		light.visible = true;
 
 
 func _on_grenade_timer_timeout():
