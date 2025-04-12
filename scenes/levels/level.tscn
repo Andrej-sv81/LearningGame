@@ -96,92 +96,92 @@ sources/1 = SubResource("TileSetAtlasSource_f7f8a")
 [node name="Level" type="Node2D"]
 script = ExtResource("1_sc3w2")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Ground" type="Node2D" parent="."]
 
-[node name="Soil" type="Sprite2D" parent="Node2D"]
+[node name="Soil" type="Sprite2D" parent="Ground"]
 texture_repeat = 2
 position = Vector2(638, 809)
 texture = ExtResource("2_680jo")
 region_enabled = true
 region_rect = Rect2(-301.085, 29.38, 16000, 10000)
 
-[node name="soil" type="TileMapLayer" parent="Node2D"]
+[node name="soil" type="TileMapLayer" parent="Ground"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD9////AQABAAIAAAD8////AQABAAIAAAD7////AQABAAEAAAD7/wAAAQACAAEAAAD7/wEAAQACAAEAAAD7/wIAAQACAAEAAAD7/wMAAQACAAEAAAD7/wQAAQACAAEAAAD7/wUAAQABAAEAAAD9//7/AQABAAEAAAD8//7/AQABAAEAAAD7//7/AQABAAEAAAD6//7/AQABAAEAAAD6////AQABAAEAAAD6/wAAAQABAAEAAAD6/wEAAQABAAEAAAD6/wIAAQABAAEAAAD6/wMAAQABAAEAAAD6/wQAAQABAAEAAAD6/wUAAQABAAEAAAD6/wYAAQABAAEAAAD7/wYAAQABAAEAAAD8/wYAAQABAAEAAAD9/wYAAQABAAEAAAD+/wYAAQABAAEAAAD//wYAAQABAAEAAAAAAAYAAQABAAEAAAABAAYAAQABAAEAAAACAAYAAQABAAEAAAADAAYAAQABAAEAAAAEAAYAAQABAAEAAAAFAAYAAQABAAEAAAAGAAYAAQABAAEAAAAHAAYAAQABAAEAAAAIAAYAAQABAAEAAAAJAAYAAQABAAEAAAAJAAUAAQABAAEAAAAJAAQAAQABAAEAAAAJAAMAAQABAAEAAAAJAAIAAQABAAEAAAAJAAEAAQABAAEAAAAJAAAAAQABAAEAAAAJAP//AQABAAEAAAAJAP7/AQABAAEAAAAIAP7/AQABAAEAAAAHAP7/AQABAAEAAAAGAP7/AQABAAEAAAAFAP7/AQABAAEAAAAFAP3/AQABAAEAAAAGAP3/AQABAAEAAAAHAP3/AQABAAEAAAAIAP3/AQABAAEAAAAJAP3/AQABAAEAAAD6//3/AQABAAEAAAD7//3/AQABAAEAAAD8//3/AQABAAEAAAD9//3/AQABAAEAAAD+//3/AQABAAEAAAAIAP//AQABAAEAAAAIAAAAAQABAAEAAAAIAAEAAQABAAEAAAAIAAIAAQABAAEAAAAIAAMAAQABAAEAAAAIAAQAAQABAAEAAAAIAAUAAQABAAEAAAD8/wUAAQABAAAAAAD9/wUAAQABAAAAAAD+/wUAAQABAAAAAAD//wUAAQABAAAAAAAAAAUAAQABAAAAAAABAAUAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAAGAAUAAQABAAAAAAAHAAUAAQABAAEAAAAHAAQAAQAAAAEAAAAHAAMAAQAAAAEAAAAHAAIAAQAAAAEAAAAHAAEAAQAAAAEAAAAHAAAAAQAAAAEAAAAHAP//AQABAAEAAAAFAP//AQABAAIAAAAGAP//AQABAAIAAAAHAPr/AQABAAEAAAAHAPv/AQABAAEAAAAHAPz/AQABAAEAAAAIAPr/AQABAAEAAAAIAPv/AQABAAEAAAAIAPz/AQABAAEAAAAJAPr/AQABAAEAAAAJAPv/AQABAAEAAAAJAPz/AQABAAEAAAAKAPr/AQABAAEAAAAKAPv/AQABAAEAAAAKAPz/AQABAAEAAAAKAP3/AQABAAEAAAAKAP7/AQABAAEAAAAKAP//AQABAAEAAAALAPr/AQABAAEAAAALAPv/AQABAAEAAAALAPz/AQABAAEAAAALAP3/AQABAAEAAAALAP7/AQABAAEAAAALAP//AQABAAEAAAAMAPr/AQABAAEAAAAMAPv/AQABAAEAAAAMAPz/AQABAAEAAAAMAP3/AQABAAEAAAAMAP7/AQABAAEAAAAMAP//AQABAAEAAAANAPr/AQABAAEAAAANAPv/AQABAAEAAAANAPz/AQABAAEAAAANAP3/AQABAAEAAAANAP7/AQABAAEAAAANAP//AQABAAEAAAAOAPr/AQABAAEAAAAOAPv/AQABAAEAAAAOAPz/AQABAAEAAAAOAP3/AQABAAEAAAAOAP7/AQABAAEAAAAOAP//AQABAAEAAAAPAPr/AQABAAEAAAAPAPv/AQABAAEAAAAPAPz/AQABAAEAAAAPAP3/AQABAAEAAAAPAP7/AQABAAEAAAAPAP//AQABAAEAAAA=")
 tile_set = SubResource("TileSet_ms5of")
 
-[node name="walls" type="TileMapLayer" parent="Node2D"]
+[node name="walls" type="TileMapLayer" parent="Ground"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD9////AAABAAAAAAD8////AAABAAAAAAD7////AAABAAEAAAD7/wAAAAAAAAIAAAD7/wEAAAAAAAIAAAD7/wIAAAAAAAIAAAD7/wMAAAAAAAIAAAD7/wQAAAAAAAIAAAAHAAAAAAAAAAIAAAAHAAEAAAAAAAIAAAAHAAIAAAAAAAIAAAAHAAMAAAAAAAIAAAAHAAQAAAAAAAIAAAAHAAUAAAACAAIAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAAAAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAIAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAHAP//AAACAAEAAAA=")
 tile_set = SubResource("TileSet_ms5of")
 
-[node name="Decoration" type="Sprite2D" parent="Node2D"]
+[node name="Decoration" type="Sprite2D" parent="Ground"]
 modulate = Color(0.988235, 0.941176, 0.694118, 0.623529)
 position = Vector2(-210, 1143)
 texture = ExtResource("3_e5vl1")
 
-[node name="Moss1" type="Sprite2D" parent="Node2D"]
+[node name="Moss1" type="Sprite2D" parent="Ground"]
 position = Vector2(-1552, 1944)
 texture = ExtResource("4_djcyg")
 
-[node name="Moss2" type="Sprite2D" parent="Node2D"]
+[node name="Moss2" type="Sprite2D" parent="Ground"]
 position = Vector2(-1576, -11)
 texture = ExtResource("5_pq81u")
 
-[node name="Moss3" type="Sprite2D" parent="Node2D"]
+[node name="Moss3" type="Sprite2D" parent="Ground"]
 position = Vector2(2759, -9)
 texture = ExtResource("6_ktouq")
 
-[node name="Moss5" type="Sprite2D" parent="Node2D"]
+[node name="Moss5" type="Sprite2D" parent="Ground"]
 position = Vector2(1314, 454)
 texture = ExtResource("8_mfur6")
 
-[node name="Blood" type="Sprite2D" parent="Node2D"]
+[node name="Blood" type="Sprite2D" parent="Ground"]
 modulate = Color(1, 1, 1, 0.796078)
 self_modulate = Color(0.835294, 1, 1, 1)
 position = Vector2(844, 1171)
 texture = ExtResource("9_gpusx")
 
-[node name="Moss4" type="Sprite2D" parent="Node2D"]
+[node name="Moss4" type="Sprite2D" parent="Ground"]
 position = Vector2(2708, 2001)
 texture = ExtResource("7_xocdv")
 
-[node name="House" parent="Node2D" instance=ExtResource("12_0wqje")]
+[node name="House" parent="Ground" instance=ExtResource("12_0wqje")]
 position = Vector2(4243, 1149)
 rotation = 1.57079
 
-[node name="SteamVent" parent="Node2D" instance=ExtResource("13_smu0p")]
+[node name="SteamVent" parent="Ground" instance=ExtResource("13_smu0p")]
 position = Vector2(544, 1563)
 
-[node name="SteamVent2" parent="Node2D" instance=ExtResource("13_smu0p")]
+[node name="SteamVent2" parent="Ground" instance=ExtResource("13_smu0p")]
 position = Vector2(2454, 91)
 
-[node name="LightFanAnimation" parent="Node2D" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("14_60np4")]
 position = Vector2(3662, 1732)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame = 4
 frame_progress = 0.176665
 
-[node name="LightFanAnimation3" parent="Node2D" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation3" parent="Ground" instance=ExtResource("14_60np4")]
 position = Vector2(3660, 555)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame_progress = 0.0652847
 
-[node name="LightFanAnimation4" parent="Node2D" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation4" parent="Ground" instance=ExtResource("14_60np4")]
 position = Vector2(4827, 559)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame_progress = 0.0652847
 
-[node name="LightFanAnimation5" parent="Node2D" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation5" parent="Ground" instance=ExtResource("14_60np4")]
 position = Vector2(4835, 1344)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
 frame_progress = 0.0652847
 
-[node name="LightFanAnimation2" parent="Node2D" instance=ExtResource("14_60np4")]
+[node name="LightFanAnimation2" parent="Ground" instance=ExtResource("14_60np4")]
 position = Vector2(3658, 2512)
 scale = Vector2(0.727443, 0.727443)
 autoplay = "default"
@@ -204,8 +204,8 @@ position = Vector2(1895, 1742)
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[connection signal="player_entered" from="Node2D/House" to="." method="_on_house_player_entered"]
-[connection signal="player_exited" from="Node2D/House" to="." method="_on_house_player_exited"]
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
 [connection signal="on_player_entered" from="Gate" to="." method="_on_gate_on_player_entered"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

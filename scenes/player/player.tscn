@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://yxlxc6l7o32m"]
+[gd_scene load_steps=16 format=3 uid="uid://yxlxc6l7o32m"]
 
 [ext_resource type="Script" uid="uid://b5k7442igsr2y" path="res://scenes/player/player.gd" id="1_fdndw"]
 [ext_resource type="Texture2D" uid="uid://dk8xsbshmv6wv" path="res://graphics/player/player.png" id="1_owpkt"]
@@ -42,6 +42,192 @@ color = Color(0.118268, 0.998785, 0.999999, 1)
 color_ramp = SubResource("GradientTexture1D_tbesa")
 turbulence_enabled = true
 
+[sub_resource type="Animation" id="Animation_lvxji"]
+resource_name = "charge_laser"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunLights/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunLights/PointLight2D2:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GunLights/PointLight2D3:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 10.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GunLights/PointLight2D:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(0, 0.9, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GunLights/PointLight2D2:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(0, 0.9, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GunLights/PointLight2D3:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(0, 0.9, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p47bc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunLights/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.38]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunLights/PointLight2D2:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.23]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GunLights/PointLight2D3:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GunLights/PointLight2D:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GunLights/PointLight2D4:energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GunLights/PointLight2D5:energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_75vfm"]
+resource_name = "charge_grenade"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunLights/PointLight2D4:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.5, 3.7, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 10.0, 10.0, 0.0, 10.0, 0.0, 10.0, 0.0, 10.0, 0.0, 10.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunLights/PointLight2D5:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3.5, 3.7, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 10.0, 0.0, 10.0, 0.0, 10.0, 0.0, 10.0, 0.0, 10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75vfm"]
+_data = {
+&"RESET": SubResource("Animation_p47bc"),
+&"charge_grenade": SubResource("Animation_75vfm"),
+&"charge_laser": SubResource("Animation_lvxji")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_fdndw")
@@ -53,7 +239,7 @@ occluder = SubResource("OccluderPolygon2D_rn6jj")
 shape = SubResource("CircleShape2D_jlpl8")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
-position = Vector2(37, 0)
+position = Vector2(35, 1)
 rotation = 1.5708
 texture = ExtResource("1_owpkt")
 
@@ -94,63 +280,45 @@ position = Vector2(48, 25)
 color = Color(1, 1, 0, 1)
 energy = 9.38
 texture = ExtResource("4_lvxji")
-texture_scale = 0.01
+texture_scale = 0.03
 
 [node name="PointLight2D2" type="PointLight2D" parent="GunLights"]
-position = Vector2(68, 32)
+position = Vector2(57, 31)
 scale = Vector2(1, 0.625)
 color = Color(1, 1, 0, 1)
 energy = 9.23
 texture = ExtResource("4_lvxji")
-texture_scale = 0.01
+texture_scale = 0.03
 
 [node name="PointLight2D3" type="PointLight2D" parent="GunLights"]
-position = Vector2(58, 32)
+position = Vector2(67, 32)
 scale = Vector2(1, 0.625)
 color = Color(1, 1, 0, 1)
 energy = 10.3
 texture = ExtResource("4_lvxji")
-texture_scale = 0.01
+texture_scale = 0.03
 
 [node name="PointLight2D4" type="PointLight2D" parent="GunLights"]
-position = Vector2(-7, 44)
-scale = Vector2(1, 0.875)
-color = Color(1, 1, 0, 1)
-energy = 10.3
+position = Vector2(83, 7.10543e-15)
+scale = Vector2(0.75, 0.625)
+color = Color(0, 0.9, 1, 1)
+energy = 10.0
 texture = ExtResource("4_lvxji")
-texture_scale = 0.01
+texture_scale = 0.05
 
 [node name="PointLight2D5" type="PointLight2D" parent="GunLights"]
-position = Vector2(-21.5, 41)
-scale = Vector2(0.875, 1)
-color = Color(1, 1, 0, 1)
-energy = 10.3
+position = Vector2(106, 1)
+scale = Vector2(0.625, 0.625)
+color = Color(0, 0.9, 1, 1)
+energy = 0.0
 texture = ExtResource("4_lvxji")
-texture_scale = 0.01
+texture_scale = 0.05
 
-[node name="PointLight2D6" type="PointLight2D" parent="GunLights"]
-position = Vector2(26.5, -28.25)
-scale = Vector2(0.875, 0.5625)
-color = Color(1, 1, 0, 1)
-energy = 10.3
-texture = ExtResource("4_lvxji")
-texture_scale = 0.01
-
-[node name="PointLight2D7" type="PointLight2D" parent="GunLights"]
-position = Vector2(21, -39)
-scale = Vector2(1, 0.625)
-color = Color(1, 1, 0, 1)
-energy = 10.3
-texture = ExtResource("4_lvxji")
-texture_scale = 0.01
-
-[node name="PointLight2D8" type="PointLight2D" parent="GunLights"]
-position = Vector2(14.5, -49)
-scale = Vector2(1.125, 0.75)
-color = Color(1, 1, 0, 1)
-energy = 10.3
-texture = ExtResource("4_lvxji")
-texture_scale = 0.01
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_75vfm")
+}
+autoplay = "charge_laser"
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
