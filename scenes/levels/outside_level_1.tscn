@@ -1,0 +1,231 @@
+[gd_scene load_steps=31 format=4 uid="uid://ce6erhgdxvwy6"]
+
+[ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_oiy42"]
+[ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="2_ifv4r"]
+[ext_resource type="PackedScene" uid="uid://bn7u0ckqfej7e" path="res://scenes/objects/gate.tscn" id="2_pa8er"]
+[ext_resource type="Script" uid="uid://8d0mk7isy1f6" path="res://scenes/levels/outside_level_1.gd" id="2_u32lw"]
+[ext_resource type="Texture2D" uid="uid://bavwgex7eqprr" path="res://graphics/tilesets/outside_walls.png" id="3_ic8sh"]
+[ext_resource type="Texture2D" uid="uid://de52ut06u6gri" path="res://graphics/tilesets/soil.png" id="4_u32lw"]
+[ext_resource type="PackedScene" uid="uid://d2qio3c5ubv1w" path="res://scenes/houses/house.tscn" id="5_6i47w"]
+[ext_resource type="Texture2D" uid="uid://mmftua15aogv" path="res://graphics/decals/moss/moss_1.png" id="6_nfea6"]
+[ext_resource type="Texture2D" uid="uid://crgfjhfctsbuk" path="res://graphics/decals/moss/moss_2.png" id="7_sj6tw"]
+[ext_resource type="Texture2D" uid="uid://cgr55ajqmqfwq" path="res://graphics/decals/moss/moss_3.png" id="8_1ucm7"]
+[ext_resource type="Texture2D" uid="uid://eppmk1uq2bk6" path="res://graphics/decals/moss/moss_5.png" id="9_p163h"]
+[ext_resource type="Texture2D" uid="uid://ry4u7nuh0v4p" path="res://graphics/decals/moss/moss_4.png" id="10_wtfhb"]
+[ext_resource type="PackedScene" uid="uid://bfknevto5xg20" path="res://scenes/objects/light_fan_animation.tscn" id="11_lhg37"]
+[ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="12_7nd3d"]
+[ext_resource type="Texture2D" uid="uid://dnyrrait4anek" path="res://graphics/decals/dirt_patch.png" id="13_yf30h"]
+[ext_resource type="Texture2D" uid="uid://ftsn1wi8u14a" path="res://graphics/decals/blood.png" id="14_acuaq"]
+[ext_resource type="PackedScene" uid="uid://dphghvt8s5bmu" path="res://scenes/enemies/drone.tscn" id="16_ic8sh"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3jyf"]
+polygon = PackedVector2Array(195, -58, -66, -64, -66, 64, 195, 60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xx2oe"]
+polygon = PackedVector2Array(58, 195, 64, -66, -64, -66, -60, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_65ymo"]
+polygon = PackedVector2Array(-58, 195, -54, -195, 58, -195, 60, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cq6xp"]
+polygon = PackedVector2Array(58, -195, 56, 42, -60, 44, -60, -195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ai4dt"]
+polygon = PackedVector2Array(-195, -58, 195, -54, 195, 58, -195, 60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uwurr"]
+polygon = PackedVector2Array(195, 52, 60, 58, 64, 195, -58, 195, -62, -66, 195, -60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5vo57"]
+polygon = PackedVector2Array(52, -195, 58, -60, 195, -64, 195, 58, -66, 62, -60, -195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2fj36"]
+polygon = PackedVector2Array(-195, -58, 66, -64, 66, 64, -195, 60)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0s5ct"]
+polygon = PackedVector2Array(-52, 195, -58, 60, -195, 64, -195, -58, 66, -62, 60, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pk7py"]
+polygon = PackedVector2Array(-195, -52, -60, -58, -64, -195, 58, -195, 62, 66, -195, 60)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y72i2"]
+resource_name = "walls"
+texture = ExtResource("3_ic8sh")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_i3jyf")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-65.5, -65, 195, -58.08, 195, 59.29, -65.5, 61)
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ai4dt")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, -59.29, -195, -58.08, -195, 59.29, 195, 60.5)
+2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2fj36")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(65.5, -65, -195, -58.08, -195, 59.29, 65.5, 61)
+0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xx2oe")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(59.29, 195, 57.5757, -63.7762, -59.3473, -65.5478, -60.5, 195)
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_uwurr")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, 59.29, 60.2511, 58.3974, 56.69, 195, -62.2498, 195, -65.5478, -59.3473, 195, -60.5)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0s5ct")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-59.29, 195, -58.3974, 60.2511, -195, 56.69, -195, -62.2498, 59.3473, -65.5478, 60.5, 195)
+0:2/0 = 0
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_65ymo")
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(59.29, 195, 58.08, -195, -59.29, -195, -60.5, 195)
+1:2/0 = 0
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5vo57")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(59.29, -195, 58.3974, -60.2511, 195, -56.69, 195, 62.2498, -59.3473, 65.5478, -60.5, -195)
+2:2/0 = 0
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_pk7py")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -59.29, -60.2511, -58.3974, -56.69, -195, 62.2498, -195, 65.5478, 59.3473, -195, 60.5)
+0:3/0 = 0
+0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_cq6xp")
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(59.29, -195, 57.5757, 63.7762, -59.3473, 65.5478, -60.5, -195)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pytah"]
+resource_name = "soil"
+texture = ExtResource("4_u32lw")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r0laj"]
+tile_size = Vector2i(390, 390)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 11
+sources/0 = SubResource("TileSetAtlasSource_y72i2")
+sources/1 = SubResource("TileSetAtlasSource_pytah")
+
+[node name="Level" instance=ExtResource("1_oiy42")]
+script = ExtResource("2_u32lw")
+
+[node name="Soil" type="Sprite2D" parent="Ground" index="0"]
+texture_repeat = 2
+position = Vector2(638, 809)
+texture = ExtResource("2_ifv4r")
+region_enabled = true
+region_rect = Rect2(-301.085, 29.38, 16000, 10000)
+
+[node name="Tiles" type="Node2D" parent="Ground" index="1"]
+
+[node name="soil" type="TileMapLayer" parent="Ground/Tiles" index="0"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD9////AQABAAIAAAD8////AQABAAIAAAD7////AQABAAEAAAD7/wAAAQACAAEAAAD7/wEAAQACAAEAAAD7/wIAAQACAAEAAAD7/wMAAQACAAEAAAD7/wQAAQACAAEAAAD7/wUAAQABAAEAAAD9//7/AQABAAEAAAD8//7/AQABAAEAAAD7//7/AQABAAEAAAD6//7/AQABAAEAAAD6////AQABAAEAAAD6/wAAAQABAAEAAAD6/wEAAQABAAEAAAD6/wIAAQABAAEAAAD6/wMAAQABAAEAAAD6/wQAAQABAAEAAAD6/wUAAQABAAEAAAD6/wYAAQABAAEAAAD7/wYAAQABAAEAAAD8/wYAAQABAAEAAAD9/wYAAQABAAEAAAD+/wYAAQABAAEAAAD//wYAAQABAAEAAAAAAAYAAQABAAEAAAABAAYAAQABAAEAAAACAAYAAQABAAEAAAADAAYAAQABAAEAAAAEAAYAAQABAAEAAAAFAAYAAQABAAEAAAAGAAYAAQABAAEAAAAHAAYAAQABAAEAAAAIAAYAAQABAAEAAAAJAAYAAQABAAEAAAAJAAUAAQABAAEAAAAJAAQAAQABAAEAAAAJAAMAAQABAAEAAAAJAAIAAQABAAEAAAAJAAEAAQABAAEAAAAJAAAAAQABAAEAAAAJAP//AQABAAEAAAAJAP7/AQABAAEAAAAIAP7/AQABAAEAAAAHAP7/AQABAAEAAAAGAP7/AQABAAEAAAAFAP7/AQABAAEAAAAFAP3/AQABAAEAAAAGAP3/AQABAAEAAAAHAP3/AQABAAEAAAAIAP3/AQABAAEAAAAJAP3/AQABAAEAAAD6//3/AQABAAEAAAD7//3/AQABAAEAAAD8//3/AQABAAEAAAD9//3/AQABAAEAAAD+//3/AQABAAEAAAAIAP//AQABAAEAAAAIAAAAAQABAAEAAAAIAAEAAQABAAEAAAAIAAIAAQABAAEAAAAIAAMAAQABAAEAAAAIAAQAAQABAAEAAAAIAAUAAQABAAEAAAD8/wUAAQABAAAAAAD9/wUAAQABAAAAAAD+/wUAAQABAAAAAAD//wUAAQABAAAAAAAAAAUAAQABAAAAAAABAAUAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAAGAAUAAQABAAAAAAAHAAUAAQABAAEAAAAHAAQAAQAAAAEAAAAHAAMAAQAAAAEAAAAHAAIAAQAAAAEAAAAHAAEAAQAAAAEAAAAHAAAAAQAAAAEAAAAHAP//AQABAAEAAAAFAP//AQABAAIAAAAGAP//AQABAAIAAAAHAPr/AQABAAEAAAAHAPv/AQABAAEAAAAHAPz/AQABAAEAAAAIAPr/AQABAAEAAAAIAPv/AQABAAEAAAAIAPz/AQABAAEAAAAJAPr/AQABAAEAAAAJAPv/AQABAAEAAAAJAPz/AQABAAEAAAAKAPr/AQABAAEAAAAKAPv/AQABAAEAAAAKAPz/AQABAAEAAAAKAP3/AQABAAEAAAAKAP7/AQABAAEAAAAKAP//AQABAAEAAAALAPr/AQABAAEAAAALAPv/AQABAAEAAAALAPz/AQABAAEAAAALAP3/AQABAAEAAAALAP7/AQABAAEAAAALAP//AQABAAEAAAAMAPr/AQABAAEAAAAMAPv/AQABAAEAAAAMAPz/AQABAAEAAAAMAP3/AQABAAEAAAAMAP7/AQABAAEAAAAMAP//AQABAAEAAAANAPr/AQABAAEAAAANAPv/AQABAAEAAAANAPz/AQABAAEAAAANAP3/AQABAAEAAAANAP7/AQABAAEAAAANAP//AQABAAEAAAAOAPr/AQABAAEAAAAOAPv/AQABAAEAAAAOAPz/AQABAAEAAAAOAP3/AQABAAEAAAAOAP7/AQABAAEAAAAOAP//AQABAAIAAAAPAPr/AQABAAEAAAAPAPv/AQACAAEAAAAPAPz/AQACAAEAAAAPAP3/AQACAAEAAAAPAP7/AQACAAEAAAAPAP//AQACAAIAAAAQAPr/AQABAAIAAAARAPr/AQABAAIAAAASAPr/AQABAAIAAAATAPr/AQABAAIAAAAUAPr/AQABAAIAAAAVAPr/AQABAAEAAAAVAPv/AQAAAAEAAAAVAPz/AQAAAAEAAAAVAP3/AQAAAAEAAAAVAP7/AQAAAAEAAAAVAP//AQAAAAEAAAAVAAAAAQAAAAEAAAAVAAEAAQAAAAEAAAAVAAIAAQAAAAEAAAAVAAMAAQAAAAEAAAAVAAQAAQAAAAEAAAAVAAUAAQAAAAEAAAAVAAYAAQABAAEAAAAOAAYAAQABAAAAAAAPAAYAAQABAAAAAAAQAAYAAQABAAAAAAARAAYAAQABAAAAAAASAAYAAQABAAAAAAATAAYAAQABAAAAAAAUAAYAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_r0laj")
+
+[node name="walls" type="TileMapLayer" parent="Ground/Tiles" index="1"]
+use_parent_material = true
+position = Vector2(0, -6)
+tile_map_data = PackedByteArray("AAD9////AAABAAAAAAD8////AAABAAAAAAD7////AAABAAEAAAD7/wAAAAAAAAIAAAD7/wEAAAAAAAIAAAD7/wIAAAAAAAIAAAD7/wMAAAAAAAIAAAD7/wQAAAAAAAIAAAAHAAQAAAAAAAIAAAAHAAUAAAACAAIAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAAAAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAIAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAHAP//AAACAAEAAAAOAAYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAAAAAARAAYAAAABAAAAAAASAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAACAAIAAAAVAAUAAAAAAAIAAAAVAAQAAAAAAAIAAAAVAAMAAAAAAAIAAAAVAAIAAAAAAAIAAAAVAAEAAAAAAAIAAAAVAAAAAAAAAAIAAAAVAP//AAAAAAIAAAAVAP7/AAAAAAIAAAAVAP3/AAAAAAIAAAAVAPz/AAAAAAIAAAAVAPv/AAAAAAIAAAAVAPr/AAACAAEAAAAUAPr/AAABAAAAAAATAPr/AAABAAAAAAASAPr/AAABAAAAAAARAPr/AAABAAAAAAAQAPr/AAABAAAAAAAPAPr/AAABAAAAAAAOAPr/AAABAAEAAAAOAPv/AAAAAAIAAAAOAPz/AAAAAAIAAAAOAP3/AAACAAIAAAA=")
+tile_set = SubResource("TileSet_r0laj")
+
+[node name="House" parent="Ground" index="2" instance=ExtResource("5_6i47w")]
+position = Vector2(4210, 1096)
+rotation = 1.57111
+
+[node name="Moss" type="Node2D" parent="Ground" index="3"]
+
+[node name="Moss1" type="Sprite2D" parent="Ground/Moss" index="0"]
+position = Vector2(-1552, 1944)
+texture = ExtResource("6_nfea6")
+
+[node name="Moss2" type="Sprite2D" parent="Ground/Moss" index="1"]
+position = Vector2(-1576, -11)
+texture = ExtResource("7_sj6tw")
+
+[node name="Moss3" type="Sprite2D" parent="Ground/Moss" index="2"]
+position = Vector2(2759, -9)
+texture = ExtResource("8_1ucm7")
+
+[node name="Moss5" type="Sprite2D" parent="Ground/Moss" index="3"]
+position = Vector2(1314, 454)
+texture = ExtResource("9_p163h")
+
+[node name="Moss4" type="Sprite2D" parent="Ground/Moss" index="4"]
+position = Vector2(2708, 2001)
+texture = ExtResource("10_wtfhb")
+
+[node name="Fans" type="Node2D" parent="Ground" index="4"]
+
+[node name="LightFanAnimation" parent="Ground/Fans" index="0" instance=ExtResource("11_lhg37")]
+position = Vector2(3662, 1732)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame = 4
+frame_progress = 0.176665
+
+[node name="LightFanAnimation3" parent="Ground/Fans" index="1" instance=ExtResource("11_lhg37")]
+position = Vector2(3660, 555)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame_progress = 0.0652847
+
+[node name="LightFanAnimation4" parent="Ground/Fans" index="2" instance=ExtResource("11_lhg37")]
+position = Vector2(4827, 559)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame_progress = 0.0652847
+
+[node name="LightFanAnimation5" parent="Ground/Fans" index="3" instance=ExtResource("11_lhg37")]
+position = Vector2(4835, 1344)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame_progress = 0.0652847
+
+[node name="LightFanAnimation2" parent="Ground/Fans" index="4" instance=ExtResource("11_lhg37")]
+position = Vector2(3658, 2512)
+scale = Vector2(0.727443, 0.727443)
+autoplay = "default"
+frame = 37
+frame_progress = 0.527334
+
+[node name="Vents" type="Node2D" parent="Ground" index="5"]
+
+[node name="SteamVent" parent="Ground/Vents" index="0" instance=ExtResource("12_7nd3d")]
+position = Vector2(544, 1563)
+
+[node name="SteamVent2" parent="Ground/Vents" index="1" instance=ExtResource("12_7nd3d")]
+position = Vector2(2454, 91)
+
+[node name="SteamVent3" parent="Ground/Vents" index="2" instance=ExtResource("12_7nd3d")]
+position = Vector2(8187, -1949)
+
+[node name="SteamVent4" parent="Ground/Vents" index="3" instance=ExtResource("12_7nd3d")]
+position = Vector2(8195, 2315)
+
+[node name="Other" type="Node2D" parent="Ground" index="6"]
+
+[node name="Dirt" type="Sprite2D" parent="Ground/Other" index="0"]
+modulate = Color(0.988235, 0.941176, 0.694118, 0.623529)
+position = Vector2(-210, 1143)
+texture = ExtResource("13_yf30h")
+
+[node name="Blood" type="Sprite2D" parent="Ground/Other" index="1"]
+modulate = Color(1, 1, 1, 0.796078)
+self_modulate = Color(0.835294, 1, 1, 1)
+position = Vector2(844, 1171)
+texture = ExtResource("14_acuaq")
+
+[node name="DirtPatch" type="Sprite2D" parent="Ground/Other" index="2"]
+modulate = Color(1, 0.894118, 0.537255, 1)
+position = Vector2(6305, -1571)
+texture = ExtResource("13_yf30h")
+
+[node name="Gate" parent="." index="1" instance=ExtResource("2_pa8er")]
+position = Vector2(591, 258)
+
+[node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_ic8sh")]
+position = Vector2(1376, 1840)
+
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
+[connection signal="on_player_entered" from="Gate" to="." method="_on_gate_on_player_entered"]

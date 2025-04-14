@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnubnyjj6aoxb"]
+[gd_scene load_steps=13 format=3 uid="uid://cnubnyjj6aoxb"]
 
 [ext_resource type="Texture2D" uid="uid://oqrlnpeih8gu" path="res://graphics/projectiles/grenade.png" id="1_ibsa2"]
 [ext_resource type="Script" uid="uid://bhpxdtmfukj7r" path="res://scenes/projectiles/grenade.gd" id="1_syxcu"]
@@ -8,6 +8,9 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8se0q"]
 friction = 10.0
 bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqjs3"]
+radius = 219.009
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ab2wm"]
 radius = 31.0644
@@ -37,6 +40,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [27]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:collision_mask")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
 }
 
 [sub_resource type="Animation" id="Animation_xhbpv"]
@@ -104,6 +119,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Area2D:collision_mask")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_b4vnt"]
 resource_name = "explosion"
@@ -159,6 +186,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Area2D:collision_mask")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s72po"]
 _data = {
@@ -167,14 +206,25 @@ _data = {
 &"explosion": SubResource("Animation_b4vnt")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oqjs3"]
+polygon = PackedVector2Array(1, -30, 14, -27, 24, -19, 29, -10, 31, 0, 29, 12, 23, 21, 14, 28, 0, 30, -13, 27, -23, 20, -29, 11, -31, 0, -30, -9, -22, -21, -11, -29)
+
 [node name="Granade" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 15
 physics_material_override = SubResource("PhysicsMaterial_8se0q")
 gravity_scale = 0.0
-linear_damp = 30.0
+linear_damp = 1.0
 script = ExtResource("1_syxcu")
 speed = 1200
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_oqjs3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ab2wm")
@@ -184,7 +234,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_ibsa2")
 
 [node name="Explosion" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
+visible = false
 texture = ExtResource("3_71rxf")
 hframes = 8
 vframes = 8
@@ -192,7 +242,7 @@ frame = 27
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_s72po")
+&"": SubResource("AnimationLibrary_s72po")
 }
 autoplay = "blinking"
 
@@ -201,3 +251,8 @@ color = Color(1, 0, 0, 1)
 energy = 0.0
 texture = ExtResource("4_j28k5")
 texture_scale = 0.1
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_oqjs3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
