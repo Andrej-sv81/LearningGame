@@ -8,9 +8,9 @@ script = ExtResource("1_sc3w2")
 
 [node name="Ground" type="Node2D" parent="."]
 
-[node name="Enemies" type="Node2D" parent="."]
-
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_4v1bl")]
 z_index = 5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ce6erhgdxvwy6"]
+[gd_scene load_steps=34 format=4 uid="uid://ce6erhgdxvwy6"]
 
 [ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_oiy42"]
 [ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="2_ifv4r"]
@@ -16,9 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="12_7nd3d"]
 [ext_resource type="Texture2D" uid="uid://dnyrrait4anek" path="res://graphics/decals/dirt_patch.png" id="13_yf30h"]
 [ext_resource type="Texture2D" uid="uid://ftsn1wi8u14a" path="res://graphics/decals/blood.png" id="14_acuaq"]
-[ext_resource type="PackedScene" uid="uid://bcdbtk2laekx" path="res://scenes/objects/toilet.tscn" id="16_6i47w"]
+[ext_resource type="PackedScene" uid="uid://ephbe5qjij52" path="res://scenes/objects/toilet.tscn" id="16_6i47w"]
 [ext_resource type="PackedScene" uid="uid://dphghvt8s5bmu" path="res://scenes/enemies/drone.tscn" id="16_ic8sh"]
-[ext_resource type="PackedScene" uid="uid://fpc877owsxtl" path="res://scenes/objects/box.tscn" id="17_nfea6"]
+[ext_resource type="PackedScene" path="res://scenes/objects/box.tscn" id="17_nfea6"]
+[ext_resource type="PackedScene" uid="uid://bc7dkvei8gdpl" path="res://scenes/objects/box_green.tscn" id="18_sj6tw"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3jyf"]
 polygon = PackedVector2Array(195, -58, -66, -64, -66, 64, 195, 60)
@@ -230,8 +231,18 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(4572, 1027)
 scale = Vector2(0.8, 0.8)
 
+[node name="GreenBox" parent="Ground" index="9" instance=ExtResource("18_sj6tw")]
+position = Vector2(4520, 1672)
+rotation = -1.5708
+
 [node name="Gate" parent="." index="1" instance=ExtResource("2_pa8er")]
 position = Vector2(591, 258)
+metadata/_edit_lock_ = true
+
+[node name="Projectiles" parent="." index="2"]
+metadata/_edit_lock_ = true
+
+[node name="Enemies" parent="." index="3"]
 metadata/_edit_lock_ = true
 
 [node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_ic8sh")]
