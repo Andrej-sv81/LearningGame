@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://ce6erhgdxvwy6"]
+[gd_scene load_steps=33 format=4 uid="uid://ce6erhgdxvwy6"]
 
 [ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_oiy42"]
 [ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="2_ifv4r"]
@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="12_7nd3d"]
 [ext_resource type="Texture2D" uid="uid://dnyrrait4anek" path="res://graphics/decals/dirt_patch.png" id="13_yf30h"]
 [ext_resource type="Texture2D" uid="uid://ftsn1wi8u14a" path="res://graphics/decals/blood.png" id="14_acuaq"]
+[ext_resource type="PackedScene" uid="uid://bcdbtk2laekx" path="res://scenes/objects/toilet.tscn" id="16_6i47w"]
 [ext_resource type="PackedScene" uid="uid://dphghvt8s5bmu" path="res://scenes/enemies/drone.tscn" id="16_ic8sh"]
+[ext_resource type="PackedScene" uid="uid://fpc877owsxtl" path="res://scenes/objects/box.tscn" id="17_nfea6"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3jyf"]
 polygon = PackedVector2Array(195, -58, -66, -64, -66, 64, 195, 60)
@@ -110,7 +112,7 @@ script = ExtResource("2_u32lw")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
-position = Vector2(638, 809)
+position = Vector2(772, 743)
 texture = ExtResource("2_ifv4r")
 region_enabled = true
 region_rect = Rect2(-301.085, 29.38, 16000, 10000)
@@ -220,11 +222,23 @@ modulate = Color(1, 0.894118, 0.537255, 1)
 position = Vector2(6305, -1571)
 texture = ExtResource("13_yf30h")
 
+[node name="Toilet" parent="Ground" index="7" instance=ExtResource("16_6i47w")]
+position = Vector2(5401, 1015)
+scale = Vector2(0.7, 0.7)
+
+[node name="Box" parent="Ground" index="8" instance=ExtResource("17_nfea6")]
+position = Vector2(4572, 1027)
+scale = Vector2(0.8, 0.8)
+
 [node name="Gate" parent="." index="1" instance=ExtResource("2_pa8er")]
 position = Vector2(591, 258)
+metadata/_edit_lock_ = true
 
 [node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_ic8sh")]
 position = Vector2(1376, 1840)
+
+[node name="Player" parent="." index="4"]
+position = Vector2(1743, 979)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

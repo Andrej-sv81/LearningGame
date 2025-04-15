@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PlayerClass
 
 var can_laser: bool = true
 var can_grenade: bool = true
