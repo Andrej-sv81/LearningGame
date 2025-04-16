@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://fpc877owsxtl"]
+[gd_scene load_steps=6 format=3 uid="uid://fpc877owsxtl"]
 
 [ext_resource type="PackedScene" uid="uid://b3117widr7s5j" path="res://scenes/objects/item_container.tscn" id="1_2vq68"]
 [ext_resource type="Texture2D" uid="uid://dmuto1c47yrkh" path="res://graphics/objects/Box.png" id="2_tf0hf"]
-[ext_resource type="Script" uid="uid://dliovjepsydgc" path="res://scenes/objects/box.gd" id="2_vfogt"]
+[ext_resource type="Script" path="res://scenes/objects/box.gd" id="2_vfogt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfogt"]
 size = Vector2(350, 252)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vfogt"]
+polygon = PackedVector2Array(-176, 111, -131, 98, 134, 100, 175, 113, 169, 124, 157, 129, 139, 129, -159, 128, -171, 123)
+
 [node name="Box" instance=ExtResource("1_2vq68")]
-collision_layer = 4
-collision_mask = 11
 script = ExtResource("2_vfogt")
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -17,3 +18,6 @@ shape = SubResource("RectangleShape2D_vfogt")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_tf0hf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
+occluder = SubResource("OccluderPolygon2D_vfogt")

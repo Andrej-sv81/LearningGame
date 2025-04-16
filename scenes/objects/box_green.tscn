@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc7dkvei8gdpl"]
+[gd_scene load_steps=7 format=3 uid="uid://bc7dkvei8gdpl"]
 
 [ext_resource type="PackedScene" uid="uid://b3117widr7s5j" path="res://scenes/objects/item_container.tscn" id="1_7w275"]
 [ext_resource type="Script" uid="uid://vtyb14rjps8s" path="res://scenes/objects/box_green.gd" id="2_6kwul"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcqy7"]
 size = Vector2(392, 174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qhnqp"]
+polygon = PackedVector2Array(-185, -88, 183, -88, 199, -71, 201, 76, 190, 88, 185, 73, 178, 55, 179, -64, 173, -71, -176, -70, -182, -65, -182, 55, -190, 73, -191, 89, -201, 79, -202, -73)
 
 [node name="GreenBox" instance=ExtResource("1_7w275")]
 script = ExtResource("2_6kwul")
@@ -20,3 +23,6 @@ texture = ExtResource("2_qhnqp")
 [node name="Sprite2D2" type="Sprite2D" parent="." index="2"]
 position = Vector2(-1, 11)
 texture = ExtResource("3_6kwul")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="3"]
+occluder = SubResource("OccluderPolygon2D_qhnqp")
