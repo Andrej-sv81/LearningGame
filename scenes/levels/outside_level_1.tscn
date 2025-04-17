@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="12_7nd3d"]
 [ext_resource type="Texture2D" uid="uid://dnyrrait4anek" path="res://graphics/decals/dirt_patch.png" id="13_yf30h"]
 [ext_resource type="Texture2D" uid="uid://ftsn1wi8u14a" path="res://graphics/decals/blood.png" id="14_acuaq"]
-[ext_resource type="PackedScene" uid="uid://ephbe5qjij52" path="res://scenes/objects/toilet.tscn" id="16_6i47w"]
+[ext_resource type="PackedScene" uid="uid://bcdbtk2laekx" path="res://scenes/objects/toilet.tscn" id="16_6i47w"]
 [ext_resource type="PackedScene" uid="uid://dphghvt8s5bmu" path="res://scenes/enemies/drone.tscn" id="16_ic8sh"]
 [ext_resource type="PackedScene" uid="uid://fpc877owsxtl" path="res://scenes/objects/box.tscn" id="17_nfea6"]
 [ext_resource type="PackedScene" uid="uid://bc7dkvei8gdpl" path="res://scenes/objects/box_green.tscn" id="18_sj6tw"]
@@ -147,22 +147,23 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(4520, 1672)
 rotation = -1.5708
 
-[node name="Gate" parent="." index="1" instance=ExtResource("2_pa8er")]
+[node name="Gate" parent="Ground" index="10" instance=ExtResource("2_pa8er")]
 position = Vector2(591, 258)
 metadata/_edit_lock_ = true
 
-[node name="Projectiles" parent="." index="2"]
+[node name="Projectiles" parent="." index="1"]
 metadata/_edit_lock_ = true
 
-[node name="Enemies" parent="." index="3"]
+[node name="Enemies" parent="." index="2"]
 metadata/_edit_lock_ = true
 
 [node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_ic8sh")]
 position = Vector2(1376, 1840)
 
-[node name="Player" parent="." index="4"]
-position = Vector2(1743, 979)
+[node name="Player" parent="." index="3"]
+position = Vector2(662, 330)
+metadata/_edit_group_ = true
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
-[connection signal="on_player_entered" from="Gate" to="." method="_on_gate_on_player_entered"]
+[connection signal="on_player_entered" from="Ground/Gate" to="." method="_on_gate_on_player_entered"]
