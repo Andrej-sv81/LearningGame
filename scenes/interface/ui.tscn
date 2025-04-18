@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbrwphyh0ncq3"]
+
+[ext_resource type="Theme" uid="uid://c4b7edc6w4mwq" path="res://scenes/interface/new_theme.tres" id="1_b8cwv"]
+[ext_resource type="Script" uid="uid://c55a0e767211a" path="res://scenes/interface/ui.gd" id="1_h8bjd"]
+[ext_resource type="Texture2D" uid="uid://cxis22xxpa33x" path="res://graphics/ui/bullet.png" id="1_l1c3l"]
+[ext_resource type="Texture2D" uid="uid://cwpk6738irx5i" path="res://graphics/ui/grenade.png" id="2_xeucg"]
+[ext_resource type="Texture2D" uid="uid://b0d37adyiykxj" path="res://graphics/ui/progress_bar/bg.png" id="4_26q02"]
+[ext_resource type="Texture2D" uid="uid://b46hfga186g8w" path="res://graphics/ui/progress_bar/over.png" id="5_h8bjd"]
+[ext_resource type="Texture2D" uid="uid://cimlf414aq4md" path="res://graphics/ui/progress_bar/progress.png" id="6_w6ssl"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_h8bjd")
+
+[node name="LaserCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.02
+anchor_top = 0.9
+anchor_right = 0.035
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaserCounter"]
+custom_minimum_size = Vector2(57, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_b8cwv")
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l1c3l")
+expand_mode = 4
+
+[node name="GrenadeCounter" type="Control" parent="."]
+custom_minimum_size = Vector2(57, 0)
+layout_mode = 3
+anchor_left = 0.07
+anchor_top = 0.9
+anchor_right = 0.085
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GrenadeCounter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_b8cwv")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_xeucg")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -30.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer"]
+layout_mode = 2
+value = 10.0
+texture_under = ExtResource("4_26q02")
+texture_over = ExtResource("5_h8bjd")
+texture_progress = ExtResource("6_w6ssl")
