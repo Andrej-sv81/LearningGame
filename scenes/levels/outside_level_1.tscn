@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="12_7nd3d"]
 [ext_resource type="Texture2D" uid="uid://dnyrrait4anek" path="res://graphics/decals/dirt_patch.png" id="13_yf30h"]
 [ext_resource type="Texture2D" uid="uid://ftsn1wi8u14a" path="res://graphics/decals/blood.png" id="14_acuaq"]
-[ext_resource type="PackedScene" uid="uid://ephbe5qjij52" path="res://scenes/objects/toilet.tscn" id="16_6i47w"]
+[ext_resource type="PackedScene" uid="uid://bcdbtk2laekx" path="res://scenes/objects/toilet.tscn" id="16_6i47w"]
 [ext_resource type="PackedScene" uid="uid://dphghvt8s5bmu" path="res://scenes/enemies/drone.tscn" id="16_ic8sh"]
 [ext_resource type="PackedScene" uid="uid://fpc877owsxtl" path="res://scenes/objects/box.tscn" id="17_nfea6"]
 [ext_resource type="PackedScene" uid="uid://bc7dkvei8gdpl" path="res://scenes/objects/box_green.tscn" id="18_sj6tw"]

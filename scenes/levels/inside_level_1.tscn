@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8ofubxwiddlu" path="res://scenes/objects/simple_light.tscn" id="7_tyfv5"]
 [ext_resource type="PackedScene" uid="uid://bfknevto5xg20" path="res://scenes/objects/light_fan_animation.tscn" id="8_wflqx"]
 [ext_resource type="PackedScene" uid="uid://c16n3d0t0hpk7" path="res://scenes/objects/wall_lamp.tscn" id="9_ypcna"]
-[ext_resource type="PackedScene" uid="uid://ephbe5qjij52" path="res://scenes/objects/toilet.tscn" id="10_nrdf1"]
+[ext_resource type="PackedScene" uid="uid://bcdbtk2laekx" path="res://scenes/objects/toilet.tscn" id="10_nrdf1"]
 [ext_resource type="Texture2D" uid="uid://dgyie8rvi168y" path="res://graphics/lights/overlays/hole.png" id="12_nrdf1"]
 [ext_resource type="Texture2D" uid="uid://b0ovxfmw3btf7" path="res://graphics/lights/overlays/infrastructure.png" id="12_ypcna"]
 [ext_resource type="Texture2D" uid="uid://dex73yydawdn3" path="res://graphics/lights/textures/circle.png" id="14_bx0re"]
