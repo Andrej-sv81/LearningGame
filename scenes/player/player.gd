@@ -41,6 +41,5 @@ func _on_laser_timer_timeout():
 	for light: PointLight2D in $GunLights.get_children():
 		light.visible = true;
 
-
 func _on_grenade_timer_timeout():
 	can_grenade = true

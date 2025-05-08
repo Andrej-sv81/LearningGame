@@ -9,16 +9,14 @@ func _on_player_laser(pos, direction):
 	laser.position = pos
 	laser.direction = direction
 	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
-	$UI.update_laser_text()
 	$Projectiles.add_child(laser)
 
 func _on_player_grenade(pos, direction):
 	var grenade = grenade_scene.instantiate() as RigidBody2D
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
-	$UI.update_grenade_text()
 	$Projectiles.add_child(grenade)
-	
+
 func _on_house_player_entered():
 	var tween = create_tween()
 	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.8,0.8), 1).set_trans(Tween.TRANS_ELASTIC)

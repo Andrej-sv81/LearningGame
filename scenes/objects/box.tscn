@@ -1,23 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://fpc877owsxtl"]
+[gd_scene load_steps=7 format=3 uid="uid://fpc877owsxtl"]
 
 [ext_resource type="PackedScene" uid="uid://b3117widr7s5j" path="res://scenes/objects/item_container.tscn" id="1_2vq68"]
 [ext_resource type="Texture2D" uid="uid://dmuto1c47yrkh" path="res://graphics/objects/Box.png" id="2_tf0hf"]
 [ext_resource type="Script" path="res://scenes/objects/box.gd" id="2_vfogt"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfogt"]
-size = Vector2(350, 252)
+[ext_resource type="Texture2D" uid="uid://dp077nxekio7t" path="res://graphics/objects/ventilation_surface_small.png" id="4_fjwrh"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vfogt"]
 polygon = PackedVector2Array(-176, 111, -131, 98, 134, 100, 175, 113, 169, 124, 157, 129, 139, 129, -159, 128, -171, 123)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfogt"]
+size = Vector2(350, 252)
+
 [node name="Box" instance=ExtResource("1_2vq68")]
 script = ExtResource("2_vfogt")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="0"]
+occluder = SubResource("OccluderPolygon2D_vfogt")
+
+[node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_vfogt")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="BaseSprite" parent="." index="2"]
 texture = ExtResource("2_tf0hf")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
-occluder = SubResource("OccluderPolygon2D_vfogt")
+[node name="TopSprite" parent="." index="3"]
+position = Vector2(120, 0)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_fjwrh")
