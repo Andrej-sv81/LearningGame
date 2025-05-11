@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://fpc877owsxtl"]
+[gd_scene load_steps=8 format=3 uid="uid://fpc877owsxtl"]
 
 [ext_resource type="PackedScene" uid="uid://b3117widr7s5j" path="res://scenes/objects/item_container.tscn" id="1_2vq68"]
 [ext_resource type="Texture2D" uid="uid://dmuto1c47yrkh" path="res://graphics/objects/Box.png" id="2_tf0hf"]
-[ext_resource type="Script" path="res://scenes/objects/box.gd" id="2_vfogt"]
-[ext_resource type="Texture2D" uid="uid://dp077nxekio7t" path="res://graphics/objects/ventilation_surface_small.png" id="4_fjwrh"]
+[ext_resource type="Script" uid="uid://dliovjepsydgc" path="res://scenes/objects/box.gd" id="2_vfogt"]
+[ext_resource type="Texture2D" uid="uid://7ajg8b813clp" path="res://graphics/objects/ventilation_surface.png" id="4_fjwrh"]
+[ext_resource type="Texture2D" uid="uid://dex73yydawdn3" path="res://graphics/lights/textures/circle.png" id="5_e81tp"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vfogt"]
 polygon = PackedVector2Array(-176, 111, -131, 98, 134, 100, 175, 113, 169, 124, 157, 129, 139, 129, -159, 128, -171, 123)
@@ -15,16 +16,39 @@ size = Vector2(350, 252)
 script = ExtResource("2_vfogt")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="0"]
+rotation = 3.14159
 occluder = SubResource("OccluderPolygon2D_vfogt")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_vfogt")
 
 [node name="BaseSprite" parent="." index="2"]
+rotation = 3.14159
 texture = ExtResource("2_tf0hf")
 
-[node name="TopSprite" parent="." index="3"]
-position = Vector2(120, 0)
+[node name="ColorRect" type="ColorRect" parent="." index="3"]
+offset_left = 13.0
+offset_top = -44.0
+offset_right = 121.0
+offset_bottom = 60.0
+color = Color(0.176421, 0.167289, 0.16272, 1)
+
+[node name="TopSprite" parent="." index="4"]
+position = Vector2(67, 8)
 rotation = 1.5708
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.593546, 0.63024)
 texture = ExtResource("4_fjwrh")
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="5"]
+visible = false
+position = Vector2(-113, 121)
+scale = Vector2(0.1525, 0.1525)
+color = Color(1, 0.415321, 0.124155, 1)
+energy = 4.04
+texture = ExtResource("5_e81tp")
+
+[node name="SpawnPositions" parent="." index="6"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]

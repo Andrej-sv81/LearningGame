@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cng62baa07tw"]
+[gd_scene load_steps=16 format=4 uid="uid://cng62baa07tw"]
 
 [ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_flwu5"]
 [ext_resource type="Script" uid="uid://b52kf1qux8jt7" path="res://scenes/levels/inside_level_1.gd" id="2_tttoh"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://dgyie8rvi168y" path="res://graphics/lights/overlays/hole.png" id="12_nrdf1"]
 [ext_resource type="Texture2D" uid="uid://b0ovxfmw3btf7" path="res://graphics/lights/overlays/infrastructure.png" id="12_ypcna"]
 [ext_resource type="Texture2D" uid="uid://dex73yydawdn3" path="res://graphics/lights/textures/circle.png" id="14_bx0re"]
-[ext_resource type="PackedScene" uid="uid://br6baen80rxoj" path="res://scenes/items/item.tscn" id="15_726hn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyfv5"]
 size = Vector2(731, 317)
@@ -121,28 +120,34 @@ rotation = -1.5708
 
 [node name="Box" parent="Ground/BoxContainer" index="10" instance=ExtResource("6_q0ucl")]
 position = Vector2(7198, 5068)
+rotation = 3.14159
 
 [node name="Box2" parent="Ground/BoxContainer" index="11" instance=ExtResource("6_q0ucl")]
 position = Vector2(7586, 5069)
+rotation = 3.14159
 
 [node name="Box3" parent="Ground/BoxContainer" index="12" instance=ExtResource("6_q0ucl")]
 position = Vector2(4914, 6959)
+rotation = 3.14159
 
 [node name="Box4" parent="Ground/BoxContainer" index="13" instance=ExtResource("6_q0ucl")]
 position = Vector2(4913, 4657)
-rotation = 3.14159
 
 [node name="Box5" parent="Ground/BoxContainer" index="14" instance=ExtResource("6_q0ucl")]
 position = Vector2(7974, 5069)
+rotation = 3.14159
 
 [node name="Box6" parent="Ground/BoxContainer" index="15" instance=ExtResource("6_q0ucl")]
 position = Vector2(7637, 1105)
+rotation = 3.14159
 
 [node name="Box7" parent="Ground/BoxContainer" index="16" instance=ExtResource("6_q0ucl")]
 position = Vector2(7246, 1102)
+rotation = 3.14159
 
 [node name="Box8" parent="Ground/BoxContainer" index="17" instance=ExtResource("6_q0ucl")]
 position = Vector2(620, 3058)
+rotation = 3.14159
 
 [node name="Lights" type="Node2D" parent="Ground" index="4"]
 metadata/_edit_lock_ = true
@@ -244,13 +249,13 @@ metadata/_edit_group_ = true
 position = Vector2(72.5, -66.5)
 shape = SubResource("RectangleShape2D_tyfv5")
 
-[node name="Projectiles" parent="." index="1"]
+[node name="Projectiles" parent="." index="2"]
 metadata/_edit_lock_ = true
 
-[node name="Enemies" parent="." index="2"]
+[node name="Enemies" parent="." index="3"]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="4"]
 position = Vector2(6268, 6833)
 rotation = -1.5708
 metadata/_edit_group_ = true
@@ -260,8 +265,5 @@ position = Vector2(0.110558, 0)
 scale = Vector2(0.744005, 1)
 texture = ExtResource("14_bx0re")
 texture_scale = 2.0
-
-[node name="Item" parent="." index="4" instance=ExtResource("15_726hn")]
-position = Vector2(6734, 5717)
 
 [connection signal="body_entered" from="Ground/Area2D" to="." method="_on_area_2d_body_entered"]

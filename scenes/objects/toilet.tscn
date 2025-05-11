@@ -27,3 +27,6 @@ texture = ExtResource("2_gxs1e")
 [node name="TopSprite" parent="." index="3"]
 position = Vector2(0, 20)
 texture = ExtResource("4_2asns")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
+position = Vector2(0, 39)
