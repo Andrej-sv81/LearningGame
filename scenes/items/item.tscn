@@ -13,7 +13,7 @@ script = ExtResource("1_jgeia")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xhhhv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PowerSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_xhhhv")
 

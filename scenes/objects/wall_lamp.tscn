@@ -21,7 +21,7 @@ shape = SubResource("CapsuleShape2D_pw7bv")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_bc6ng")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="LampSprite" type="Sprite2D" parent="."]
 position = Vector2(4, 5)
 texture = ExtResource("1_gyxu1")
 region_enabled = true

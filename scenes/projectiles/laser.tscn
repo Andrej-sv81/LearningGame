@@ -13,7 +13,7 @@ collision_mask = 7
 script = ExtResource("1_jngbl")
 speed = 2000
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="LaserSprite" type="Sprite2D" parent="."]
 position = Vector2(-1, 33)
 texture = ExtResource("2_kvvjf")
 

@@ -8,18 +8,17 @@ var distance: int = randi_range(150, 250)
 
 func _ready() -> void:
 	if type == 'laser':
-		$Sprite2D.modulate = Color(0.1, 0.3, 0.8);
+		$PowerSprite.modulate = Color(0.1, 0.3, 0.8);
 	elif type == 'grenade':
-		$Sprite2D.modulate = Color(0.8, 0.2, 0.1);
+		$PowerSprite.modulate = Color(0.8, 0.2, 0.1);
 	else:
-		$Sprite2D.modulate = Color(0.1, 0.8, 0.1);
+		$PowerSprite.modulate = Color(0.1, 0.8, 0.1);
 
 	var target_position = position + direction * distance
 	var tween = create_tween()
 	#tween.set_parallel(true) moze i ovako za sve sledece tweenove
 	tween.tween_property(self, "position", target_position, 0.5)
 	tween.parallel().tween_property(self, "scale", Vector2(1,1), 0.3).from(Vector2(0,0))
-	
 	
 func _process(delta: float) -> void:
 	rotation += rotation_speed * delta
