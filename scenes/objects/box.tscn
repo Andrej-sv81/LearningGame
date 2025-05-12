@@ -47,8 +47,4 @@ color = Color(1, 0.415321, 0.124155, 1)
 energy = 4.04
 texture = ExtResource("5_e81tp")
 
-[node name="SpawnPositions" parent="." index="6"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
 [node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
