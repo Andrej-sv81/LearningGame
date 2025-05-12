@@ -8,14 +8,6 @@ var item_scene: PackedScene = preload("res://scenes/items/item.tscn")
 func _ready() -> void:
 	for container in get_tree().get_nodes_in_group("Container"):
 		container.connect("open", _on_container_opened)
-	var scenes = ["res://scenes/projectiles/laser.tscn","res://scenes/projectiles/grenade.tscn","res://scenes/items/item.tscn","res://scenes/levels/InsideLevel.tscn"]
-	for scene_path in scenes:
-		var file = FileAccess.open(scene_path, FileAccess.READ)
-		if file:
-			var content = file.get_as_text()
-			if "Sprite2D" in content:
-				print("Found 'Sprite2D' in ", scene_path)
-				file.close()
 	
 func _on_container_opened(pos, direction) -> void:
 	var item = item_scene.instantiate() as Area2D
