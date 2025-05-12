@@ -13,6 +13,7 @@ radius = 105.0
 height = 242.0
 
 [node name="Toilet" instance=ExtResource("1_y83tn")]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("2_2asns")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="0"]

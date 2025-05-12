@@ -137,7 +137,6 @@ texture = ExtResource("13_yf30h")
 
 [node name="Toilet" parent="Ground" index="7" instance=ExtResource("16_6i47w")]
 position = Vector2(5401, 1015)
-scale = Vector2(0.7, 0.7)
 
 [node name="Box" parent="Ground" index="8" instance=ExtResource("17_nfea6")]
 position = Vector2(4572, 1027)

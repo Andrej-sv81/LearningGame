@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=4 uid="uid://cng62baa07tw"]
+[gd_scene load_steps=18 format=4 uid="uid://cng62baa07tw"]
 
 [ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_flwu5"]
 [ext_resource type="Script" uid="uid://b52kf1qux8jt7" path="res://scenes/levels/inside_level_1.gd" id="2_tttoh"]
 [ext_resource type="TileSet" uid="uid://vghhbikjxvh2" path="res://scenes/levels/house.tres" id="3_7njja"]
 [ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="3_bx0re"]
+[ext_resource type="Texture2D" uid="uid://b651afdjuy8vx" path="res://graphics/decals/brushes/brush048.png" id="3_erbmk"]
 [ext_resource type="PackedScene" uid="uid://del17ip77k8cm" path="res://scenes/objects/bed.tscn" id="4_c1osw"]
 [ext_resource type="PackedScene" uid="uid://bc7dkvei8gdpl" path="res://scenes/objects/box_green.tscn" id="5_wj78u"]
 [ext_resource type="PackedScene" uid="uid://fpc877owsxtl" path="res://scenes/objects/box.tscn" id="6_q0ucl"]
 [ext_resource type="PackedScene" uid="uid://8ofubxwiddlu" path="res://scenes/objects/simple_light.tscn" id="7_tyfv5"]
+[ext_resource type="PackedScene" uid="uid://cgejistslsajj" path="res://scenes/objects/steam_vent.tscn" id="8_726hn"]
 [ext_resource type="PackedScene" uid="uid://bfknevto5xg20" path="res://scenes/objects/light_fan_animation.tscn" id="8_wflqx"]
 [ext_resource type="PackedScene" uid="uid://c16n3d0t0hpk7" path="res://scenes/objects/wall_lamp.tscn" id="9_ypcna"]
 [ext_resource type="PackedScene" uid="uid://ephbe5qjij52" path="res://scenes/objects/toilet.tscn" id="10_nrdf1"]
@@ -21,10 +23,18 @@ size = Vector2(731, 317)
 [node name="Level" instance=ExtResource("1_flwu5")]
 script = ExtResource("2_tttoh")
 
-[node name="Ground" parent="." index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Decals" index="0"]
+modulate = Color(0.253826, 0, 0.023218, 1)
+position = Vector2(6872, 6010)
+texture = ExtResource("3_erbmk")
 metadata/_edit_lock_ = true
 
+[node name="Ground" parent="." index="1"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
+z_index = -2
 texture_repeat = 2
 position = Vector2(5087, 3724)
 texture = ExtResource("3_bx0re")
@@ -33,6 +43,7 @@ region_rect = Rect2(0, 0, 15000, 15000)
 metadata/_edit_lock_ = true
 
 [node name="LayerContainer" type="Node2D" parent="Ground" index="1"]
+z_index = -1
 position = Vector2(33, -42)
 metadata/_edit_lock_ = true
 
@@ -149,7 +160,25 @@ rotation = 3.14159
 position = Vector2(620, 3058)
 rotation = 3.14159
 
-[node name="Lights" type="Node2D" parent="Ground" index="4"]
+[node name="Vents" type="Node2D" parent="Ground" index="4"]
+metadata/_edit_lock_ = true
+
+[node name="SteamVent" parent="Ground/Vents" index="0" instance=ExtResource("8_726hn")]
+position = Vector2(1172, 3049)
+
+[node name="SteamVent2" parent="Ground/Vents" index="1" instance=ExtResource("8_726hn")]
+position = Vector2(5417, 4631)
+
+[node name="SteamVent5" parent="Ground/Vents" index="2" instance=ExtResource("8_726hn")]
+position = Vector2(8218, 5359)
+
+[node name="SteamVent3" parent="Ground/Vents" index="3" instance=ExtResource("8_726hn")]
+position = Vector2(5494, 1111)
+
+[node name="SteamVent4" parent="Ground/Vents" index="4" instance=ExtResource("8_726hn")]
+position = Vector2(4290, 1877)
+
+[node name="Lights" type="Node2D" parent="Ground" index="5"]
 metadata/_edit_lock_ = true
 
 [node name="SimpleLight" parent="Ground/Lights" index="0" instance=ExtResource("7_tyfv5")]
@@ -210,6 +239,7 @@ frame_progress = 0.124809
 position = Vector2(6271, 5420)
 autoplay = "default"
 frame_progress = 0.14003
+metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation6" parent="Ground/Lights" index="12" instance=ExtResource("8_wflqx")]
 position = Vector2(6273, 6194)
@@ -237,11 +267,11 @@ position = Vector2(6074, 147)
 scale = Vector2(1.39121, 1.33856)
 texture = ExtResource("12_nrdf1")
 
-[node name="Toilet" parent="Ground" index="5" instance=ExtResource("10_nrdf1")]
-position = Vector2(8213, 6393)
+[node name="Toilet" parent="Ground" index="6" instance=ExtResource("10_nrdf1")]
+position = Vector2(8258, 6351)
 rotation = 1.5708
 
-[node name="Area2D" type="Area2D" parent="Ground" index="6"]
+[node name="Area2D" type="Area2D" parent="Ground" index="7"]
 position = Vector2(6199, 7220)
 metadata/_edit_group_ = true
 
@@ -249,13 +279,16 @@ metadata/_edit_group_ = true
 position = Vector2(72.5, -66.5)
 shape = SubResource("RectangleShape2D_tyfv5")
 
-[node name="Projectiles" parent="." index="2"]
+[node name="Items" parent="." index="2"]
+position = Vector2(910, -175)
+
+[node name="Projectiles" parent="." index="3"]
 metadata/_edit_lock_ = true
 
-[node name="Enemies" parent="." index="3"]
+[node name="Enemies" parent="." index="4"]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="5"]
 position = Vector2(6268, 6833)
 rotation = -1.5708
 metadata/_edit_group_ = true
