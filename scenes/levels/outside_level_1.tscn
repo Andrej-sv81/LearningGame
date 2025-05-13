@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ce6erhgdxvwy6"]
+[gd_scene load_steps=21 format=4 uid="uid://ce6erhgdxvwy6"]
 
 [ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_oiy42"]
 [ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="2_ifv4r"]
@@ -19,16 +19,19 @@
 [ext_resource type="PackedScene" uid="uid://dphghvt8s5bmu" path="res://scenes/enemies/drone.tscn" id="16_ic8sh"]
 [ext_resource type="PackedScene" uid="uid://fpc877owsxtl" path="res://scenes/objects/box.tscn" id="17_nfea6"]
 [ext_resource type="PackedScene" uid="uid://bc7dkvei8gdpl" path="res://scenes/objects/box_green.tscn" id="18_sj6tw"]
+[ext_resource type="PackedScene" uid="uid://cdgs0bfwenovq" path="res://scenes/enemies/scout.tscn" id="20_sj6tw"]
 
 [node name="Level" instance=ExtResource("1_oiy42")]
 script = ExtResource("2_u32lw")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
+z_index = -2
 texture_repeat = 2
 position = Vector2(772, 743)
 texture = ExtResource("2_ifv4r")
 region_enabled = true
 region_rect = Rect2(-301.085, 29.38, 16000, 10000)
+metadata/_edit_lock_ = true
 
 [node name="Tiles" type="Node2D" parent="Ground" index="1"]
 
@@ -150,17 +153,20 @@ rotation = -1.5708
 position = Vector2(591, 258)
 metadata/_edit_lock_ = true
 
-[node name="Projectiles" parent="." index="2"]
+[node name="Projectiles" parent="." index="4"]
 metadata/_edit_lock_ = true
 
-[node name="Enemies" parent="." index="3"]
+[node name="Enemies" parent="." index="5"]
 metadata/_edit_lock_ = true
 
 [node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_ic8sh")]
 position = Vector2(1376, 1840)
 
-[node name="Player" parent="." index="4"]
-position = Vector2(-221, 1003)
+[node name="Scout" parent="Enemies" index="1" instance=ExtResource("20_sj6tw")]
+position = Vector2(3639, -268)
+
+[node name="Player" parent="." index="6"]
+position = Vector2(442, 392)
 metadata/_edit_group_ = true
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]

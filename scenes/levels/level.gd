@@ -9,6 +9,7 @@ func _ready() -> void:
 	for container in get_tree().get_nodes_in_group("Container"):
 		container.connect("open", _on_container_opened)
 	
+	
 func _on_container_opened(pos, direction) -> void:
 	var item = item_scene.instantiate() as Area2D
 	item.position = pos

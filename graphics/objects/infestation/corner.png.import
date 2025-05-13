@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djvvts4s42vvt"
-path="res://.godot/imported/corner.png-14735dffcb567251b988fcebd6a3c699.ctex"
+path="res://.godot/imported/corner.png-0a904f7e67dbb30bd13e81b1dbfe6ab8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/objects/corner.png"
-dest_files=["res://.godot/imported/corner.png-14735dffcb567251b988fcebd6a3c699.ctex"]
+source_file="res://graphics/objects/infestation/corner.png"
+dest_files=["res://.godot/imported/corner.png-0a904f7e67dbb30bd13e81b1dbfe6ab8.ctex"]
 
 [params]
 

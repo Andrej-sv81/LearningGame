@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgejistslsajj"]
+[gd_scene load_steps=8 format=3 uid="uid://cgejistslsajj"]
 
 [ext_resource type="Texture2D" uid="uid://dmhy0icy6yn2q" path="res://graphics/objects/ventilation_hole.png" id="1_6jukb"]
+[ext_resource type="Script" uid="uid://b1v2trr0motqr" path="res://scenes/objects/steam_vent.gd" id="1_f0qoe"]
 [ext_resource type="Texture2D" uid="uid://bx8m6lf76kb3u" path="res://graphics/decals/white.png" id="2_61rte"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ctyku"]
@@ -25,6 +26,7 @@ color = Color(0.760784, 0.760784, 0.760784, 0.254902)
 color_ramp = SubResource("GradientTexture1D_b5v1l")
 
 [node name="SteamVent" type="StaticBody2D"]
+script = ExtResource("1_f0qoe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ctyku")
@@ -34,6 +36,6 @@ texture = ExtResource("1_6jukb")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 70
-process_material = SubResource("ParticleProcessMaterial_vai6d")
 texture = ExtResource("2_61rte")
 lifetime = 1.6
+process_material = SubResource("ParticleProcessMaterial_vai6d")

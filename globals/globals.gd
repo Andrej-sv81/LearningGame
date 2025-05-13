@@ -18,3 +18,5 @@ var health = 50:
 	set(value):
 		health = min(value, 100)
 		stat_change.emit()
+
+var player_pos: Vector2
