@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdgs0bfwenovq"]
+[gd_scene load_steps=5 format=3 uid="uid://cdgs0bfwenovq"]
 
 [ext_resource type="Texture2D" uid="uid://clt7ohcedg11l" path="res://graphics/enemies/scout.png" id="1_i70sm"]
 [ext_resource type="Script" uid="uid://ce3os57eribuc" path="res://scenes/enemies/scout.gd" id="1_ns734"]
@@ -6,15 +6,47 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns734"]
 radius = 45.1774
 
-[node name="Scout" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_08kc0"]
+radius = 887.005
+
+[node name="Scout" type="CharacterBody2D" groups=["Entity", "Scouts"]]
 collision_layer = 2
 collision_mask = 11
 script = ExtResource("1_ns734")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="ScoutSprite" type="Sprite2D" parent="."]
 position = Vector2(42, 27)
 rotation = 1.5708
 texture = ExtResource("1_i70sm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ns734")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_08kc0")
+
+[node name="LaserSpawnPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="LaserSpawnPositions"]
+position = Vector2(124, -26)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions"]
+position = Vector2(134, 12)
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="LaserCooldown" type="Timer" parent="Timers"]
+wait_time = 0.6
+one_shot = true
+
+[node name="HitTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="Timers/LaserCooldown" to="." method="_on_laser_cooldown_timeout"]
+[connection signal="timeout" from="Timers/HitTimer" to="." method="_on_hit_timer_timeout"]

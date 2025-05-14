@@ -37,6 +37,9 @@ func _process(_delta):
 		$GrenadeTimer.start()
 		$AnimationPlayer.play("charge_grenade")
 
+func hit() -> void:
+	Globals.health -= 10
+	
 func _on_laser_timer_timeout():
 	can_laser = true
 	for light: PointLight2D in $GunLights.get_children():
