@@ -5,6 +5,8 @@ var can_laser: bool = true
 var alt_gun: bool = true
 var can_be_hit: bool = true
 
+@onready var scout_animation: AnimationPlayer = $ScoutAnimation
+
 @export var health: int = 50
 
 signal laser(pos, direction)
@@ -26,6 +28,7 @@ func hit() -> void:
 		can_be_hit = false
 		health -= 10
 		$Timers/HitTimer.start()
+		scout_animation.play("flash")
 	if health <= 0:
 		queue_free()
 	

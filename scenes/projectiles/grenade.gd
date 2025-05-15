@@ -4,8 +4,10 @@ extends RigidBody2D
 var explosion_active: bool = false
 var explosion_radius: int = 400
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func  explode():
-	$AnimationPlayer.play("explosion")
+	animation_player.play("explosion")
 	explosion_active = true
 
 func _process(_delta: float) -> void:

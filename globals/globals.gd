@@ -17,12 +17,17 @@ var grenade_amount = 10:
 var can_be_hit: bool = true
 var health = 50:
 	set(value):
-		if can_be_hit:
-			can_be_hit = false
-			health = min(value, 100)
-			player_can_be_hit_timer()
-			stat_change.emit()
+		if value < health:
+			if can_be_hit:
+				can_be_hit = false
+				health = value
+				player_can_be_hit_timer()
+		else:
+			health = min(value,100)
+		stat_change.emit()
 
 func player_can_be_hit_timer():
-	pass
+	await get_tree().create_timer(0.5).timeout
+	can_be_hit = true
+	
 var player_pos: Vector2

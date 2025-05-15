@@ -7,6 +7,8 @@ var can_grenade: bool = true
 signal laser(position, direction)
 signal grenade(position, direction)
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 @export var max_speed: int = 500
 var speed: int = max_speed
 
@@ -26,7 +28,7 @@ func _process(_delta):
 		laser.emit(selected_laser.global_position, laser_direction)
 		$LaserTimer.start()
 		$LaserParticles.emitting = true
-		$AnimationPlayer.play("charge_laser")
+		animation_player.play("charge_laser")
 		
 	if Input.is_action_just_pressed("secondary_action") and can_grenade and Globals.grenade_amount > 0:
 		var pos = $LaserStartPositions.get_children()[0].global_position
@@ -35,7 +37,7 @@ func _process(_delta):
 		Globals.grenade_amount -= 1
 		grenade.emit(pos, grenade_direction)
 		$GrenadeTimer.start()
-		$AnimationPlayer.play("charge_grenade")
+		animation_player.play("charge_grenade")
 
 func hit() -> void:
 	Globals.health -= 10
