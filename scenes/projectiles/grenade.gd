@@ -15,6 +15,6 @@ func _process(_delta: float) -> void:
 		var targets = get_tree().get_nodes_in_group("Container") + get_tree().get_nodes_in_group("Entity")
 		for target in targets:
 			if target.global_position.distance_to(global_position) < explosion_radius:
-				if "hit" in target:
-					target.hit()
-					print(target)
+				if "hit" in target and "alive" in target:
+					if target.alive:
+						target.hit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://ce6erhgdxvwy6"]
+[gd_scene load_steps=22 format=4 uid="uid://ce6erhgdxvwy6"]
 
 [ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_oiy42"]
 [ext_resource type="Texture2D" uid="uid://jtbgobe3i82d" path="res://graphics/ground/stones.png" id="2_ifv4r"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://fpc877owsxtl" path="res://scenes/objects/box.tscn" id="17_nfea6"]
 [ext_resource type="PackedScene" uid="uid://bc7dkvei8gdpl" path="res://scenes/objects/box_green.tscn" id="18_sj6tw"]
 [ext_resource type="PackedScene" uid="uid://cdgs0bfwenovq" path="res://scenes/enemies/scout.tscn" id="20_sj6tw"]
+[ext_resource type="PackedScene" uid="uid://73renlknx4qs" path="res://scenes/enemies/bug.tscn" id="21_1ucm7"]
 
 [node name="Level" instance=ExtResource("1_oiy42")]
 script = ExtResource("2_u32lw")
@@ -163,7 +164,10 @@ metadata/_edit_lock_ = true
 position = Vector2(1376, 1840)
 
 [node name="Scout" parent="Enemies" index="1" instance=ExtResource("20_sj6tw")]
-position = Vector2(1747, 894)
+position = Vector2(5170, 1689)
+
+[node name="Bug" parent="Enemies" index="2" instance=ExtResource("21_1ucm7")]
+position = Vector2(-636, 1125)
 
 [node name="Player" parent="." index="6"]
 position = Vector2(442, 392)

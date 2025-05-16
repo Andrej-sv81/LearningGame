@@ -9,6 +9,7 @@ signal grenade(position, direction)
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@export var alive: bool = true
 @export var max_speed: int = 500
 var speed: int = max_speed
 
@@ -41,6 +42,8 @@ func _process(_delta):
 
 func hit() -> void:
 	Globals.health -= 10
+	if Globals.health <= 0:
+		alive = false
 	
 func _on_laser_timer_timeout():
 	can_laser = true

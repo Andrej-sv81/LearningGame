@@ -7,6 +7,7 @@ var can_be_hit: bool = true
 
 @onready var scout_animation: AnimationPlayer = $ScoutAnimation
 
+@export var alive: bool = true
 @export var health: int = 50
 
 signal laser(pos, direction)
@@ -30,6 +31,7 @@ func hit() -> void:
 		$Timers/HitTimer.start()
 		scout_animation.play("flash")
 	if health <= 0:
+		alive = false
 		queue_free()
 	
 func _on_attack_area_body_entered(_body: Node2D) -> void:

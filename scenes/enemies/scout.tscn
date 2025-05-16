@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://clt7ohcedg11l" path="res://graphics/enemies/scout.png" id="1_i70sm"]
 [ext_resource type="Script" uid="uid://ce3os57eribuc" path="res://scenes/enemies/scout.gd" id="1_ns734"]
-[ext_resource type="Shader" uid="uid://f8vjqshhiof1" path="res://scenes/enemies/scout.gdshader" id="2_08kc0"]
+[ext_resource type="Shader" uid="uid://f8vjqshhiof1" path="res://scenes/enemies/flash.gdshader" id="2_08kc0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08kc0"]
 radius = 887.005
@@ -14,6 +14,21 @@ radius = 45.1774
 shader = ExtResource("2_08kc0")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_value = 0.0
+
+[sub_resource type="Animation" id="Animation_t8bpu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScoutSprite:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_08kc0"]
 resource_name = "flash"
@@ -31,21 +46,6 @@ tracks/0/keys = {
 "values": [0.0, 1.0, 0.0, 1.0, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_t8bpu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ScoutSprite:material:shader_parameter/flash_value")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8x0q1"]
 _data = {
 &"RESET": SubResource("Animation_t8bpu"),
@@ -58,14 +58,12 @@ collision_mask = 11
 script = ExtResource("1_ns734")
 
 [node name="AttackArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_08kc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_ns734")
 
 [node name="ScoutSprite" type="Sprite2D" parent="."]
@@ -75,7 +73,6 @@ rotation = 1.5708
 texture = ExtResource("1_i70sm")
 
 [node name="LaserSpawnPositions" type="Node2D" parent="."]
-visible = false
 
 [node name="Marker2D" type="Marker2D" parent="LaserSpawnPositions"]
 position = Vector2(124, -26)
