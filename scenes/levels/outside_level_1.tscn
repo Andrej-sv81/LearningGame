@@ -195,7 +195,7 @@ metadata/_edit_lock_ = true
 
 [node name="Car" parent="Path2D" index="0" instance=ExtResource("22_p163h")]
 position = Vector2(3294, 4682)
-rotation = 0.404892
+rotation = 0.404891
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
