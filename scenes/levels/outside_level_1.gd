@@ -11,5 +11,5 @@ func _on_house_player_entered():
 	
 func _on_house_player_exited():
 	var tween = create_tween()
-	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.6,0.6), 1).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.4,0.4), 1).set_trans(Tween.TRANS_ELASTIC)
 	

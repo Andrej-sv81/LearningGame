@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dphghvt8s5bmu"]
 
-[ext_resource type="Script" uid="uid://cyfgwrucqyi2" path="res://scenes/enemies/Drone.gd" id="1_3qcx7"]
+[ext_resource type="Script" uid="uid://cyfgwrucqyi2" path="res://scenes/enemies/drone.gd" id="1_3qcx7"]
 [ext_resource type="Shader" uid="uid://f8vjqshhiof1" path="res://scenes/enemies/flash.gdshader" id="2_dyfay"]
 [ext_resource type="Texture2D" uid="uid://brciuvk4vhlds" path="res://graphics/enemies/drone.png" id="2_t22qf"]
 [ext_resource type="Texture2D" uid="uid://icwqcsgorthb" path="res://graphics/explosions/explosion_3.png" id="4_xgp3v"]
@@ -88,22 +88,6 @@ tracks/5/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_lt60k"]
-resource_name = "flash"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Drone:material:shader_parameter/flash_value")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 0.0, 1.0, 0.0]
-}
-
 [sub_resource type="Animation" id="Animation_cq5ml"]
 resource_name = "explosion"
 length = 1.8
@@ -180,6 +164,22 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lt60k"]
+resource_name = "flash"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Drone:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xgp3v"]
