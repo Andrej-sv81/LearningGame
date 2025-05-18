@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdgs0bfwenovq"]
+[gd_scene load_steps=11 format=3 uid="uid://cdgs0bfwenovq"]
 
 [ext_resource type="Texture2D" uid="uid://clt7ohcedg11l" path="res://graphics/enemies/scout.png" id="1_i70sm"]
 [ext_resource type="Script" uid="uid://ce3os57eribuc" path="res://scenes/enemies/scout.gd" id="1_ns734"]
 [ext_resource type="Shader" uid="uid://f8vjqshhiof1" path="res://scenes/enemies/flash.gdshader" id="2_08kc0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08kc0"]
-radius = 887.005
+radius = 743.732
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8bpu"]
+radius = 1976.04
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns734"]
 radius = 45.1774
@@ -54,14 +57,21 @@ _data = {
 
 [node name="Scout" type="CharacterBody2D" groups=["Entity", "Scouts"]]
 collision_layer = 2
-collision_mask = 11
+collision_mask = 15
 script = ExtResource("1_ns734")
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="AttackArea" type="Area2D" parent="Areas"]
 collision_layer = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/AttackArea"]
 shape = SubResource("CircleShape2D_08kc0")
+
+[node name="NoticeArea" type="Area2D" parent="Areas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/NoticeArea"]
+shape = SubResource("CircleShape2D_t8bpu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ns734")
@@ -90,12 +100,20 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="NavigationtTimer" type="Timer" parent="Timers"]
+autostart = true
+
 [node name="ScoutAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_8x0q1")
 }
 
-[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
-[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="body_entered" from="Areas/AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="Areas/AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="Areas/NoticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="body_exited" from="Areas/NoticeArea" to="." method="_on_notice_area_body_exited"]
 [connection signal="timeout" from="Timers/LaserCooldown" to="." method="_on_laser_cooldown_timeout"]
 [connection signal="timeout" from="Timers/HitTimer" to="." method="_on_hit_timer_timeout"]
+[connection signal="timeout" from="Timers/NavigationtTimer" to="." method="_on_navigationt_timer_timeout"]
