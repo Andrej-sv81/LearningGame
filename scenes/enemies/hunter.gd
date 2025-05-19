@@ -6,7 +6,7 @@ var player_near: bool = false
 var speed: int = 300
 var health: int = 200
 
-@onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var navigation_agent_2d: NavigationAgent2D = $Agent/NavigationAgent2D
 @onready var hunter_animation: AnimationPlayer = $HunterAnimation
 @onready var flash_animation: AnimationPlayer = $FlashAnimation
 
@@ -30,6 +30,7 @@ func hit() -> void:
 		$Timers/HitTimer.start()
 		flash_animation.play("flash")
 		$Node2D/HitParticles.emitting = true
+		$AudioStreamPlayer2D.play()
 	if health <= 0:
 		alive = false
 		queue_free()

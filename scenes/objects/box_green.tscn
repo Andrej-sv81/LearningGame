@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bc7dkvei8gdpl"]
+[gd_scene load_steps=8 format=3 uid="uid://bc7dkvei8gdpl"]
 
 [ext_resource type="PackedScene" uid="uid://b3117widr7s5j" path="res://scenes/objects/item_container.tscn" id="1_7w275"]
 [ext_resource type="Script" uid="uid://vtyb14rjps8s" path="res://scenes/objects/box_green.gd" id="2_6kwul"]
 [ext_resource type="Texture2D" uid="uid://jac21iiv42be" path="res://graphics/objects/box/base.png" id="2_qhnqp"]
 [ext_resource type="Texture2D" uid="uid://bbyixsmgxrw8e" path="res://graphics/objects/box/lid.png" id="3_6kwul"]
+[ext_resource type="AudioStream" uid="uid://d0w2qii505agn" path="res://audio/container_hit.mp3" id="5_6kwul"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qhnqp"]
 polygon = PackedVector2Array(-185, -88, 183, -88, 199, -71, 201, 76, 190, 88, 185, 73, 178, 55, 179, -64, 173, -71, -176, -70, -182, -65, -182, 55, -190, 73, -191, 89, -201, 79, -202, -73)
@@ -59,3 +60,7 @@ position = Vector2(-161, -52)
 
 [node name="Marker2D11" type="Marker2D" parent="SpawnPositions" index="10"]
 position = Vector2(-1, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("5_6kwul")
+volume_db = -15.0

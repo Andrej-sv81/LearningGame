@@ -9,3 +9,4 @@ func hit() -> void:
 		var pos = $SpawnPositions/Marker2D.global_position
 		open.emit(pos, current_direction)
 		opened = true
+		$AudioStreamPlayer2D.play()

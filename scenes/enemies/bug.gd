@@ -26,6 +26,7 @@ func hit() -> void:
 		$Timers/HitTimer.start()
 		bug_animation.play("flash")
 		$Node2D/HitParticles.emitting = true
+		$AudioStreamPlayer2D.play()
 	if health <= 0:   #not great design, the bug can still move and damage during the 0.5 sec for the particle emission
 		alive = false
 		await  get_tree().create_timer(0.5).timeout

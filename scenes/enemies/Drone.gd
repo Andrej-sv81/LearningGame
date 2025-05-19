@@ -40,6 +40,7 @@ func hit():
 		health -= 10
 		$HitTimer.start()
 		drone_animation.play("flash")
+		$AudioStreamPlayer2D.play()
 	if health <= 0:
 		alive = false
 		can_be_hit = false

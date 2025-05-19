@@ -41,6 +41,7 @@ func hit() -> void:
 		health -= 10
 		$Timers/HitTimer.start()
 		scout_animation.play("flash")
+		$AudioStreamPlayer2D.play()
 	if health <= 0:
 		alive = false
 		queue_free()

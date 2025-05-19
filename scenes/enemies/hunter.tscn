@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b67rtq5fba448"]
+[gd_scene load_steps=33 format=3 uid="uid://b67rtq5fba448"]
 
 [ext_resource type="Script" uid="uid://b3wdii8vjh1jc" path="res://scenes/enemies/hunter.gd" id="1_07510"]
 [ext_resource type="Shader" uid="uid://f8vjqshhiof1" path="res://scenes/enemies/flash.gdshader" id="2_ewcdy"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://kguvh31dhayo" path="res://graphics/enemies/hunter/parts/claw.png" id="6_v2w17"]
 [ext_resource type="Texture2D" uid="uid://cs2lc7gxjt76l" path="res://graphics/enemies/hunter/parts/leg_back_outer.png" id="7_v2w17"]
 [ext_resource type="Texture2D" uid="uid://cihmdfn07f318" path="res://graphics/explosions/grunge.png" id="10_v2w17"]
+[ext_resource type="AudioStream" uid="uid://bbvhcvjervkmi" path="res://audio/organic_impact.mp3" id="11_6qg4t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07510"]
 radius = 33.0
@@ -19,7 +20,7 @@ height = 320.0
 radius = 1845.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_07510"]
-radius = 277.626
+radius = 119.038
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_so8gi"]
 resource_name = "FrontRightLeg"
@@ -549,10 +550,13 @@ shape = SubResource("CircleShape2D_vu6l5")
 [node name="AttackArea" type="Area2D" parent="Areas"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/AttackArea"]
-position = Vector2(0, -53)
+position = Vector2(0, -233)
 shape = SubResource("CircleShape2D_07510")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="Agent" type="Node2D" parent="."]
+position = Vector2(0, -107)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Agent"]
 
 [node name="Timers" type="Node" parent="."]
 
@@ -757,6 +761,10 @@ texture = ExtResource("10_v2w17")
 lifetime = 0.5
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_vteex")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_6qg4t")
+volume_db = -15.0
 
 [connection signal="body_entered" from="Areas/NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="Areas/NoticeArea" to="." method="_on_notice_area_body_exited"]

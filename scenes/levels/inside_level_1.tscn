@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cng62baa07tw"]
+[gd_scene load_steps=31 format=4 uid="uid://cng62baa07tw"]
 
 [ext_resource type="PackedScene" uid="uid://b5pew5fu2wcha" path="res://scenes/levels/level.tscn" id="1_flwu5"]
 [ext_resource type="Script" uid="uid://b52kf1qux8jt7" path="res://scenes/levels/inside_level_1.gd" id="2_tttoh"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://dqjcnmh0c2n0b" path="res://graphics/objects/infestation/small_4.png" id="24_vbsoj"]
 [ext_resource type="Texture2D" uid="uid://3nxluy3qaeie" path="res://graphics/objects/infestation/spikes.png" id="25_8koqf"]
 [ext_resource type="Texture2D" uid="uid://djvvts4s42vvt" path="res://graphics/objects/infestation/corner.png" id="26_swces"]
+[ext_resource type="PackedScene" uid="uid://73renlknx4qs" path="res://scenes/enemies/bug.tscn" id="27_bcwun"]
+[ext_resource type="PackedScene" uid="uid://b67rtq5fba448" path="res://scenes/enemies/hunter.tscn" id="28_h8o0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyfv5"]
 size = Vector2(731, 317)
@@ -453,6 +455,42 @@ metadata/_edit_lock_ = true
 
 [node name="Enemies" parent="." index="5"]
 metadata/_edit_lock_ = true
+
+[node name="Bug" parent="Enemies" index="0" instance=ExtResource("27_bcwun")]
+position = Vector2(7750, 182)
+rotation = -1.23155
+
+[node name="Bug2" parent="Enemies" index="1" instance=ExtResource("27_bcwun")]
+position = Vector2(7398, 365)
+
+[node name="Bug3" parent="Enemies" index="2" instance=ExtResource("27_bcwun")]
+position = Vector2(7678, -170)
+rotation = 1.10053
+
+[node name="Bug4" parent="Enemies" index="3" instance=ExtResource("27_bcwun")]
+position = Vector2(7640, 513)
+rotation = -1.72985
+
+[node name="Bug5" parent="Enemies" index="4" instance=ExtResource("27_bcwun")]
+position = Vector2(671, 2134)
+rotation = -1.72985
+
+[node name="Bug6" parent="Enemies" index="5" instance=ExtResource("27_bcwun")]
+position = Vector2(691, 1784)
+rotation = -4.50625
+
+[node name="Bug7" parent="Enemies" index="6" instance=ExtResource("27_bcwun")]
+position = Vector2(8212, 6170)
+rotation = -4.50625
+
+[node name="Bug8" parent="Enemies" index="7" instance=ExtResource("27_bcwun")]
+position = Vector2(8071, 6580)
+rotation = -7.62735
+metadata/_edit_group_ = true
+
+[node name="Hunter" parent="Enemies" index="8" instance=ExtResource("28_h8o0w")]
+position = Vector2(4097, 901)
+rotation = -1.59989
 
 [node name="Player" parent="." index="6"]
 position = Vector2(6270, 6809)
