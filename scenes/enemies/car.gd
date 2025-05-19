@@ -57,3 +57,7 @@ func fire() -> void:
 
 func _on_hit_timer_timeout() -> void:
 	can_be_hit = true
+
+
+func _on_character_body_2d_hit_signal() -> void:
+	hit()

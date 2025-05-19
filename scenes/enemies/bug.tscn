@@ -199,7 +199,7 @@ particles_anim_loop = false
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_ey6sa"]
+[sub_resource type="CurveTexture" id="CurveTexture_xww0a"]
 curve = SubResource("Curve_uc11a")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5fik3"]
@@ -213,7 +213,7 @@ initial_velocity_max = 200.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.4
 scale_max = 0.6
-scale_curve = SubResource("CurveTexture_ey6sa")
+scale_curve = SubResource("CurveTexture_xww0a")
 anim_offset_max = 1.0
 
 [node name="Bug" type="CharacterBody2D" groups=["Entity"]]

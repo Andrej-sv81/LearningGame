@@ -35,7 +35,8 @@ func _on_hit_timer_timeout() -> void:
 	can_be_hit = true
 	
 func _on_attack_timer_timeout() -> void:
-	$AnimatedSprite2D.play("attack")
+	if player_near:
+		$AnimatedSprite2D.play("attack")
 	
 func _on_notice_area_body_entered(_body: Node2D) -> void:
 	active = true

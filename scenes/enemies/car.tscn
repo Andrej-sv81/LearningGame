@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bb4aq6sd826cc"]
+[gd_scene load_steps=16 format=3 uid="uid://bb4aq6sd826cc"]
 
 [ext_resource type="Texture2D" uid="uid://v2t657vanc6m" path="res://graphics/car/main.png" id="1_q40b2"]
 [ext_resource type="Script" uid="uid://c4ju1p0wa6kr6" path="res://scenes/enemies/car.gd" id="1_ytjck"]
+[ext_resource type="Script" uid="uid://l6ctu0uuxu4p" path="res://scenes/enemies/character_body_2d.gd" id="2_10lyu"]
 [ext_resource type="Shader" uid="uid://f8vjqshhiof1" path="res://scenes/enemies/flash.gdshader" id="2_86l62"]
 [ext_resource type="Texture2D" uid="uid://c4t68wi5d7edr" path="res://graphics/car/turret.png" id="3_ld76f"]
 [ext_resource type="Texture2D" uid="uid://cvgnqar1y0ssl" path="res://graphics/explosions/gun.png" id="5_u7rmd"]
@@ -107,6 +108,33 @@ _data = {
 &"laser_load": SubResource("Animation_ld76f")
 }
 
+[sub_resource type="Animation" id="Animation_10lyu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CarSprite:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Turret/TurretSprite:material:shader_parameter/flash_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_u7rmd"]
 resource_name = "flash"
 length = 0.4
@@ -135,45 +163,19 @@ tracks/1/keys = {
 "values": [0.0, 1.0, 0.0, 1.0, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_10lyu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CarSprite:material:shader_parameter/flash_value")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Turret/TurretSprite:material:shader_parameter/flash_value")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_10lyu"]
 _data = {
 &"RESET": SubResource("Animation_10lyu"),
 &"flash": SubResource("Animation_u7rmd")
 }
 
-[node name="Car" type="PathFollow2D" groups=["Entity"]]
+[node name="Car" type="PathFollow2D"]
 script = ExtResource("1_ytjck")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Entity"]]
 collision_layer = 2
 collision_mask = 15
+script = ExtResource("2_10lyu")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -256,6 +258,7 @@ libraries = {
 wait_time = 0.3
 one_shot = true
 
+[connection signal="hit_signal" from="CharacterBody2D" to="." method="_on_character_body_2d_hit_signal"]
 [connection signal="body_entered" from="Turret/NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="Turret/NoticeArea" to="." method="_on_notice_area_body_exited"]
 [connection signal="timeout" from="Timers/HitTimer" to="." method="_on_hit_timer_timeout"]
