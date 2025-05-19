@@ -14,6 +14,7 @@ radius = 1976.04
 radius = 45.1774
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_08kc0"]
+resource_local_to_scene = true
 shader = ExtResource("2_08kc0")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_value = 0.0

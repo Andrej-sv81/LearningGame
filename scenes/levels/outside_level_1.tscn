@@ -239,22 +239,25 @@ metadata/_edit_lock_ = true
 [node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_ic8sh")]
 position = Vector2(2383, 1764)
 
-[node name="Scout" parent="Enemies" index="1" instance=ExtResource("20_sj6tw")]
+[node name="Drone2" parent="Enemies" index="1" instance=ExtResource("16_ic8sh")]
+position = Vector2(2261, 382)
+
+[node name="Scout" parent="Enemies" index="2" instance=ExtResource("20_sj6tw")]
 position = Vector2(4976, 2860)
 
-[node name="Bug" parent="Enemies" index="2" instance=ExtResource("21_1ucm7")]
+[node name="Bug" parent="Enemies" index="3" instance=ExtResource("21_1ucm7")]
 position = Vector2(-1503, 1874)
 rotation = 1.68167
-
-[node name="Bug2" parent="Enemies" index="3" instance=ExtResource("21_1ucm7")]
-position = Vector2(-1359, 1984)
-rotation = 3.05826
 
 [node name="Hunter" parent="Enemies" index="4" instance=ExtResource("22_wtfhb")]
 position = Vector2(5016, 629)
 
+[node name="Bug2" parent="Enemies" index="5" instance=ExtResource("21_1ucm7")]
+position = Vector2(-1373, 1977)
+rotation = 3.01047
+
 [node name="Player" parent="." index="6"]
-position = Vector2(4853, -209)
+position = Vector2(595, 1438)
 metadata/_edit_group_ = true
 
 [node name="Path2D" type="Path2D" parent="." index="8"]

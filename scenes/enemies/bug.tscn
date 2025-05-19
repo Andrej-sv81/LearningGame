@@ -45,6 +45,7 @@ radius = 869.058
 radius = 173.003
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_abc4i"]
+resource_local_to_scene = true
 shader = ExtResource("1_jahts")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_value = 0.0

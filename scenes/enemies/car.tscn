@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvgnqar1y0ssl" path="res://graphics/explosions/gun.png" id="5_u7rmd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u7rmd"]
+resource_local_to_scene = true
 shader = ExtResource("2_86l62")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_value = 0.0
@@ -16,6 +17,7 @@ shader_parameter/flash_value = 0.0
 radius = 744.688
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_10lyu"]
+resource_local_to_scene = true
 shader = ExtResource("2_86l62")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_value = 0.0
